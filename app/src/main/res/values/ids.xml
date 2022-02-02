@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--region LOGIN ID's-->
+    <item type="id" name="login_card_view"/>
+    <item type="id" name="login_text_view"/>
+    <item type="id" name="login_user_layout_text"/>
+    <item type="id" name="login_password_layout_text"/>
+    <item type="id" name="login_user_edit_text"/>
+    <item type="id" name="login_password_edit_text"/>
+    <item type="id" name="login_button"/>
+    <item type="id" name="login_with_facebook_button"/>
+    <item type="id" name="login_with_google_button"/>
+    <item type="id" name="login_with_apple_button"/>
+    <item type="id" name="login_with_linkedin_button"/>
+    <item type="id" name="login_top_view"/>
+    <item type="id" name="login_not_member"/>
+    <item type="id" name="login_forget_password"/>
+    <item type="id" name="login_sign_up_button"/>
+    <item type="id" name="login_divider_first"/>
+    <item type="id" name="login_divider_second"/>
+    <item type="id" name="login_button_facebook"/>
+    <item type="id" name="login_button_google"/>
+    <item type="id" name="login_button_apple"/>
+    <item type="id" name="login_or_label"/>
+    <!--endregion LOGIN ID's-->
+
+</resources>

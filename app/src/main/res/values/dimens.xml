@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--region GENERAL DIMENSIONS-->
+
+    <!--region GENERAL ELEMENT DIMENSIONS-->
+    <dimen name="left_card_padding">14dp</dimen>
+    <dimen name="right_card_padding">14dp</dimen>
+    <!--endregion GENERAL ELEMENT DIMENSIONS-->
+
+    <!--region GENERAL ELEMENT DIMENSIONS-->
+    <dimen name="view_separator_height">1dp</dimen>
+    <!--endregion GENERAL ELEMENT DIMENSIONS-->
+
+    <!--region TEXT DIMENSION-->
+    <dimen name="paragraph_text_size">14sp</dimen>
+    <dimen name="tittle_text_size">20sp</dimen>
+    <dimen name="subtittle_text_size">16sp</dimen>
+    <dimen name="textview_small_padding">3dp</dimen>
+    <!--endregion TEXT DIMENSION-->
+
+    <!--region BUTTON DIMENSIONS-->
+    <dimen name="button_radius_size">50dp</dimen>
+    <dimen name="button_elevation">8dp</dimen>
+    <dimen name="button_insets">0dp</dimen>
+    <!--endregion BUTTON DIMENSIONS-->
+
+    <!--region LAYOUT DIMENSION-->
+    <dimen name="right_content_margin">12dp</dimen>
+    <dimen name="left_content_margin">12dp</dimen>
+    <dimen name="element_between_layout_margin_large">25dp</dimen>
+    <dimen name="element_between_layout_margin_xlarge">35dp</dimen>
+    <!--endregion LAYOUT DIMENSION-->
+
+    <!--region CARD DIMENSIONS-->
+    <dimen name="top_card_padding">14dp</dimen>
+    <dimen name="bottom_card_padding">14dp</dimen>
+    <dimen name="card_elevation">6dp</dimen>
+    <dimen name="card_radius">6dp</dimen>
+    <dimen name="element_between_margin_small">14dp</dimen>
+    <dimen name="element_between_margin_large">25dp</dimen>
+    <!--endregion CARD DIMENSIONS-->
+
+
+
+    <!--endregion GENERAL DIMENSIONS-->
+
+    <!--region LOGIN DIMENSIONS-->
+    <dimen name="login_card_max_width">150dp</dimen>
+    <dimen name="login_card_max_height">300dp</dimen>
+
+    <!--endregion LOGIN DIMENSIONS-->
+
+
+</resources>

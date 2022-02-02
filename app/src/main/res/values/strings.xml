@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">hue</string>
+
+    <!-- region GENERAL TEXT -->
+    <string name="ok">Ok</string>
+    <string name="cancel">Cancel</string>
+    <string name="accept">Accept</string>
+    <string name="decline">Decline</string>
+    <string name="logout">Logout</string>
+    <string name="home">Home</string>
+    <string name="profile">Profile</string>
+    <string name="account">Account</string>
+    <string name="thread">Thread</string>
+    <!-- endregion GENERAL TEXT -->
+
+    <!--region LOGIN TEXTS -->
+    <string name="my_main_theme">Hello</string>
+    <string name="login_button_text">Login</string>
+    <string name="login_user_text_view_hint">Email/Mobile</string>
+    <string name="login_password_text_view_hint">Password</string>
+    <string name="login_remember_me">Remember me</string>
+    <string name="login_not_member">Not a member?</string>
+    <string name="login_or">OR</string>
+    <string name="login_google_description">Login with Google</string>
+    <string name="login_apple_description">Login with Apple</string>
+    <string name="login_facebook_description">Login with Facebook</string>
+    <string name="login_sign_up">Sign up now</string>
+    <string name="login_forget_password">Forget password?</string>
+    <!--endregion LOGIN TEXTS-->
+
+
+</resources>

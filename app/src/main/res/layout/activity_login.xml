@@ -7,11 +7,29 @@
     android:layout_height="match_parent"
     android:fillViewport="true"
     android:background="@drawable/login_background"
-    tools:context=".MainActivity">
+    tools:context=".views.activities.LoginActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@id/login_icon_logo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="fitCenter"
+            android:visibility="visible"
+            android:layout_marginStart="@dimen/left_logo_content_margin"
+            android:layout_marginEnd="@dimen/right_logo_content_margin"
+            android:layout_marginTop="@dimen/top_logo_content_margin"
+            android:maxHeight="@dimen/login_logo_height"
+            android:maxWidth="@dimen/login_logo_width"
+            android:adjustViewBounds="true"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/login_card_view"
+            app:srcCompat="@drawable/ic_hue_alt" />
 
         <com.google.android.material.card.MaterialCardView
             android:id="@id/login_card_view"
@@ -70,9 +88,10 @@
                         android:id="@id/login_password_edit_text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="textPassword"
                         android:hint="@string/login_password_text_view_hint"
-                        tools:text="Branix123."/>
+                        android:inputType="textPassword"
+                        tools:ignore="TextContrastCheck"
+                        tools:text="Branix123." />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -80,12 +99,12 @@
                     android:id="@id/login_button"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/login_button_text"
                     android:layout_marginTop="@dimen/element_between_margin_large"
+                    android:text="@string/login_button_text"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/login_password_layout_text"
-                    />
+                    tools:ignore="TextContrastCheck" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@id/login_forget_password"
@@ -96,7 +115,7 @@
                     android:text="@string/login_forget_password"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/login_button"
-                    />
+                    tools:ignore="TextContrastCheck" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@id/login_not_member"
@@ -115,10 +134,10 @@
                     android:layout_height="wrap_content"
                     android:stateListAnimator="@null"
                     android:text="@string/login_sign_up"
-                    app:layout_constraintTop_toBottomOf="@id/login_forget_password"
-                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    />
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/login_forget_password"
+                    tools:ignore="TextContrastCheck" />
 
                 <!--endregion LOGIN CARD CONTENT-->
 

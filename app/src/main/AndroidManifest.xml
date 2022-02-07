@@ -10,14 +10,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Hue">
         <activity
-            android:name=".MainActivity"
-            android:exported="true">
+            android:name=".views.activities.LoginActivity"
+            android:exported="true" />
+        <activity
+            android:name=".views.activities.SplashActivity"
+            android:noHistory="true"
+            android:exported="true"
+            android:theme="@style/Theme.Hue.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>

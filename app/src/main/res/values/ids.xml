@@ -22,6 +22,7 @@
     <item type="id" name="login_button_google"/>
     <item type="id" name="login_button_apple"/>
     <item type="id" name="login_or_label"/>
+    <item type="id" name="login_icon_logo"/>
     <!--endregion LOGIN ID's-->
 
 </resources>

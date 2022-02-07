@@ -49,5 +49,10 @@
         <item name="cardCornerRadius">@dimen/card_radius</item>
     </style>
 
+    <style name="Theme.Hue.Splash" parent="Theme.Hue">
+        <item name="android:windowBackground">@drawable/splash_background</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
 
 </resources>

@@ -3,6 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Vector/Documents/GitHub/hue/app/src/main/res/drawable/ic_hue.xml" value="0.2" />
+        <entry key="..\:/Users/Vector/Documents/GitHub/hue/app/src/main/res/drawable/ic_hue_alt.xml" value="0.344" />
+        <entry key="..\:/Users/Vector/Documents/GitHub/hue/app/src/main/res/drawable/login_background.xml" value="0.344" />
+        <entry key="..\:/Users/Vector/Documents/GitHub/hue/app/src/main/res/drawable/splash_background.xml" value="0.344" />
+        <entry key="..\:/Users/Vector/Documents/GitHub/hue/app/src/main/res/layout/activity_login.xml" value="0.264" />
+        <entry key="..\:/Users/Vector/Documents/GitHub/hue/app/src/main/res/layout/activity_main.xml" value="0.2444078947368421" />
         <entry key="..\:/Users/arezg/AndroidStudioProjects/hue/app/src/main/res/drawable/ic_apple_logo.xml" value="0.19638157894736843" />
         <entry key="..\:/Users/arezg/AndroidStudioProjects/hue/app/src/main/res/drawable/ic_facebook_f.xml" value="0.1875" />
         <entry key="..\:/Users/arezg/AndroidStudioProjects/hue/app/src/main/res/drawable/ic_facebook_logo.xml" value="0.19638157894736843" />

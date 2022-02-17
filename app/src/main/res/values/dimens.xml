@@ -41,14 +41,16 @@
     <dimen name="element_between_margin_large">25dp</dimen>
     <!--endregion CARD DIMENSIONS-->
 
-
-
     <!--endregion GENERAL DIMENSIONS-->
+
+    <!--region SPLASH DIMENSIONS-->
+    <dimen name="splash_logo_dimen">270dp</dimen>
+    <!--endregion SPLASH DIMENSIONS-->
 
     <!--region LOGIN DIMENSIONS-->
     <dimen name="login_card_max_width">350dp</dimen>
-    <dimen name="login_logo_width">350dp</dimen>
-    <dimen name="login_logo_height">210dp</dimen>
+    <dimen name="login_alternative_logo_width">350dp</dimen>
+    <dimen name="login_alternative_logo_height">210dp</dimen>
     <dimen name="right_logo_content_margin">20dp</dimen>
     <dimen name="left_logo_content_margin">20dp</dimen>
     <dimen name="top_logo_content_margin">30dp</dimen>

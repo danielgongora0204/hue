@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:drawable="@color/primaryDarkColor"/>
+        android:drawable="@color/primaryDarkColor" />
     <item
         android:drawable="@drawable/ic_hue"
-        android:gravity="center"/>
+        android:gravity="center"
+        android:height="@dimen/splash_logo_dimen"
+        android:width="@dimen/splash_logo_dimen"/>
 </layer-list>

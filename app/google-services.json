@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "529919063215",
+    "project_id": "hue-social",
+    "storage_bucket": "hue-social.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:529919063215:android:6026388ad9471e029c105a",
+        "android_client_info": {
+          "package_name": "com.gig.hue"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "529919063215-ee1sh54q5v8gobc3lee28npt8rhslvpe.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.gig.hue",
+            "certificate_hash": "7220dfd7b16e900640131890caaf66f68400489e"
+          }
+        },
+        {
+          "client_id": "529919063215-biorljif32uuo8fopi34c48g1gidt8r3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCV8Kxn-7hH3SU2ZcpK0gbm0BE1_No-mfk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "529919063215-biorljif32uuo8fopi34c48g1gidt8r3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

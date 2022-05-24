@@ -35,6 +35,7 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    namespace 'com.gig.hue'
 }
 
 dependencies {
@@ -48,7 +49,6 @@ dependencies {
 
     //region Ktx
     implementation "androidx.core:core-ktx:$rootProject.ktxVersion"
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$rootProject.kotlinVersion"
     //endregion
 
     //region AppCompat
@@ -66,7 +66,7 @@ dependencies {
     //endregion
 
     //region MaterialDesign
-    implementation 'com.google.android.material:material:1.5.0'
+    implementation 'com.google.android.material:material:1.6.0'
     //endregion
 
     //region Hilt

@@ -4,19 +4,19 @@ buildscript {
     ext {
         //Dependencies
         lifecycleVersion = '2.4.1'
-        gradleVersion = '7.1.0'
-        kotlinVersion = '1.6.10'
+        gradleVersion = '7.2.0'
+        kotlinVersion = '1.6.21'
         playServiceVersion = '4.3.10'
-        hiltVersion = '2.38.1'
+        hiltVersion = '2.40.1'
         ktxVersion = '1.7.0'
         appCompatVersion = '1.4.1'
-        constraintLayoutVersion = '2.1.3'
+        constraintLayoutVersion = '2.1.4'
         junitExtVersion = '1.1.3'
         expressoVersion = '3.4.0'
         junitVersion = '4.13.2'
         hiltViewModelVersion = '1.0.0-alpha03'
-        roomVersion = '2.4.1'
-        activityVersion = '1.5.0-alpha02'
+        roomVersion = '2.4.2'
+        activityVersion = '1.6.0-alpha04'
         composeVersion = '1.2.0-alpha03'
     }
 

@@ -6,20 +6,8 @@
     <data>
 
         <variable
-            name="showProgress"
-            type="Boolean" />
-
-        <variable
-            name="loginBtnEnabled"
-            type="Boolean" />
-
-        <variable
-            name="emailErrorMessage"
-            type="String" />
-
-        <variable
-            name="passwordErrorMessage"
-            type="String" />
+            name="viewModel"
+            type="com.gig.hue.view_models.LoginViewModel" />
 
     </data>
 
@@ -89,6 +77,7 @@
                             android:layout_height="wrap_content"
                             android:inputType="textEmailAddress"
                             android:hint="@string/login_user_text_view_hint"
+                            android:text="@={viewModel.username}"
                             tools:text="test_email@gmail.com"
                             />
 
@@ -111,6 +100,7 @@
                             android:layout_height="wrap_content"
                             android:hint="@string/login_password_text_view_hint"
                             android:inputType="textPassword"
+                            android:text="@={viewModel.password}"
                             tools:ignore="TextContrastCheck"
                             tools:text="Branix123." />
 
@@ -122,6 +112,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/element_between_margin_large"
                         android:text="@string/login_button_text"
+                        android:onClick="@{() -> viewModel.loginClick()}"
+                        app:isEnabled="@{viewModel.loginEnabled}"
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintRight_toRightOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/login_password_layout_text"
@@ -205,14 +197,13 @@
                 android:id="@id/login_button_facebook"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/element_between_layout_margin_xlarge"
-                android:layout_marginBottom="@dimen/element_between_layout_margin_xlarge"
+                android:layout_marginTop="@dimen/element_between_layout_margin_large"
                 android:contentDescription="@string/login_facebook_description"
+                app:isEnabled="@{viewModel.loginEnabled}"
                 app:backgroundTint="@color/secondaryColor"
                 app:layout_constraintTop_toBottomOf="@id/login_or_label"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/login_button_google"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:srcCompat="@drawable/ic_facebook_logo"
                 app:tint="@color/facebook_primary"/>
 
@@ -220,14 +211,13 @@
                 android:id="@id/login_button_google"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/element_between_layout_margin_xlarge"
-                android:layout_marginBottom="@dimen/element_between_layout_margin_xlarge"
+                android:layout_marginTop="@dimen/element_between_layout_margin_large"
                 android:contentDescription="@string/login_google_description"
+                app:isEnabled="@{viewModel.loginEnabled}"
                 app:backgroundTint="@color/secondaryColor"
                 app:layout_constraintTop_toBottomOf="@id/login_or_label"
                 app:layout_constraintStart_toEndOf="@id/login_button_facebook"
                 app:layout_constraintEnd_toStartOf="@id/login_button_apple"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:srcCompat="@drawable/ic_google_logo"
                 app:tint="@null"/>
 
@@ -235,16 +225,27 @@
                 android:id="@id/login_button_apple"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/element_between_layout_margin_xlarge"
-                android:layout_marginBottom="@dimen/element_between_layout_margin_xlarge"
+                android:layout_marginTop="@dimen/element_between_layout_margin_large"
                 android:contentDescription="@string/login_apple_description"
+                app:isEnabled="@{viewModel.loginEnabled}"
                 app:backgroundTint="@color/secondaryColor"
                 app:layout_constraintTop_toBottomOf="@id/login_or_label"
                 app:layout_constraintStart_toEndOf="@id/login_button_google"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:srcCompat="@drawable/ic_apple_logo"
                 app:tint="@color/apple_primary"/>
+
+            <androidx.core.widget.ContentLoadingProgressBar
+                android:id="@id/login_progress"
+                style="@style/CustomContentLoadingProgress"
+                android:theme="@style/CustomContentLoadingProgress"
+                app:layout_constraintTop_toBottomOf="@id/login_button_google"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:showProgress="@{viewModel.showProgress}"
+                tools:visibility="visible"
+                />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </layout>

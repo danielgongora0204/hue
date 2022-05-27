@@ -30,7 +30,7 @@
     <!--region LAYOUT DIMENSION-->
     <dimen name="right_content_margin">12dp</dimen>
     <dimen name="left_content_margin">12dp</dimen>
-    <dimen name="element_between_layout_margin_large">25dp</dimen>
+    <dimen name="element_between_layout_margin_large">20dp</dimen>
     <dimen name="element_between_layout_margin_xlarge">35dp</dimen>
     <!--endregion LAYOUT DIMENSION-->
 
@@ -46,6 +46,10 @@
     <!--region SPLASH DIMENSIONS-->
     <dimen name="splash_logo_dimen">270dp</dimen>
     <!--endregion SPLASH DIMENSIONS-->
+
+    <!--region PROGRESS DIMENSIONS-->
+    <dimen name="progress_bar_size">75dp</dimen>
+    <!--endregion PROGRESS DIMENSIONS-->
 
     <!--region LOGIN DIMENSIONS-->
     <dimen name="login_card_max_width">350dp</dimen>

@@ -1,17 +1,18 @@
 package com.gig.hue.models
 
+import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity
 data class UserInformation(
     @PrimaryKey val id: String,
-    val name: String,
-    val lastName: String,
-    val maternalLastName: String,
-    val phoneNumber: String,
-    val contactEmail: String,
-    val webPage: String?,
-    val address: String?,
-    val profilePictureUrl: String?
+    @ColumnInfo(name = "name") val name: String,
+    @ColumnInfo(name = "lastName") val lastName: String,
+    @ColumnInfo(name = "maternalLastName") val maternalLastName: String,
+    @ColumnInfo(name = "phoneNumber") val phoneNumber: String,
+    @ColumnInfo(name = "contactEmail") val contactEmail: String,
+    @ColumnInfo(name = "webPage") val webPage: String?,
+    @ColumnInfo(name = "address") val address: String?,
+    @ColumnInfo(name = "profilePictureUrl") val profilePictureUrl: String?
 )

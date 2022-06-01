@@ -1,7 +1,7 @@
-package com.gig.hue.com.gig.hue.data
-/*
+package com.gig.hue.data
+
 import androidx.room.Database
-import com.gig.hue.com.gig.hue.models.*
+import com.gig.hue.models.*
 
 
 
@@ -12,4 +12,4 @@ import com.gig.hue.com.gig.hue.models.*
 )
 class AppDatabase {
 
-}*/
+}

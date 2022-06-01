@@ -7,7 +7,8 @@ import androidx.databinding.Bindable
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.gig.hue.com.gig.hue.util.ObservableViewModel
+import com.gig.hue.util.ObservableViewModel
+
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import java.lang.Exception

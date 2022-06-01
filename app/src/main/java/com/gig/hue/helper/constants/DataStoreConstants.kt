@@ -1,4 +1,4 @@
-package com.gig.hue.com.gig.hue.helper.constants
+package com.gig.hue.helper.constants
 
 object DataStoreConstants {
     const val DATA_STORE_NAME = "hueSettings"

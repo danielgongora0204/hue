@@ -1,4 +1,4 @@
-package com.gig.hue.com.gig.hue.data
+package com.gig.hue.data
 
 import android.content.Context
 import androidx.datastore.core.DataStore
@@ -6,7 +6,7 @@ import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.preferencesKey
 import androidx.datastore.preferences.createDataStore
-import com.gig.hue.com.gig.hue.helper.constants.DataStoreConstants
+import com.gig.hue.helper.constants.DataStoreConstants
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 

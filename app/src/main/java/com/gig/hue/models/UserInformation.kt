@@ -1,4 +1,4 @@
-package com.gig.hue.com.gig.hue.models
+package com.gig.hue.models
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

@@ -1,11 +1,9 @@
-package com.gig.hue.com.gig.hue.adapters
+package com.gig.hue.adapters
 
 import android.view.View
 import androidx.core.widget.ContentLoadingProgressBar
 import androidx.databinding.BindingAdapter
-import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
-import com.google.android.material.textview.MaterialTextView
 
 @BindingAdapter("showProgress")
 fun bindShowProgress(progressBar: ContentLoadingProgressBar, showProgress: Boolean) =

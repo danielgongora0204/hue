@@ -1,4 +1,4 @@
-package com.gig.hue.util
+package com.gig.hue.utilities
 
 import androidx.databinding.Bindable
 import androidx.databinding.Observable

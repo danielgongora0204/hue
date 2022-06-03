@@ -1,13 +1,10 @@
 package com.gig.hue.view_models
 
 import android.content.Context
-import android.os.Build
-import androidx.annotation.RequiresApi
 import androidx.databinding.Bindable
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import com.gig.hue.util.ObservableViewModel
+import com.gig.hue.utilities.ObservableViewModel
 
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext

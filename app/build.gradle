@@ -29,6 +29,10 @@ android {
         dataBinding true
     }
     compileOptions {
+        //Flag to enable support for the new language APIs
+        coreLibraryDesugaringEnabled true
+
+        //Sets Java compatibility to 8
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
@@ -39,8 +43,12 @@ android {
 }
 
 dependencies {
+    //region De-sugaring
+    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:$rootProject.desugarVersion")
+    //endregion
+
     //region Firebase
-    implementation platform('com.google.firebase:firebase-bom:29.0.4')
+    implementation platform("com.google.firebase:firebase-bom:$rootProject.firebaseVersion")
     //Analytics
     implementation 'com.google.firebase:firebase-analytics-ktx'
     //Authentication
@@ -66,7 +74,7 @@ dependencies {
     //endregion
 
     //region MaterialDesign
-    implementation 'com.google.android.material:material:1.6.0'
+    implementation "com.google.android.material:material:$rootProject.materialVersion"
     //endregion
 
     //region Hilt

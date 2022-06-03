@@ -11,6 +11,7 @@
     <string name="profile">Profile</string>
     <string name="account">Account</string>
     <string name="thread">Thread</string>
+    <string name="time_format">MM/dd/yyyy</string>
     <!-- endregion GENERAL TEXT -->
 
     <!--region LOGIN TEXTS -->

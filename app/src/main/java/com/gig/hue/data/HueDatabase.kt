@@ -1,16 +1,17 @@
 package com.gig.hue.data
 
 import android.content.Context
-import androidx.databinding.adapters.Converters
+
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
+import com.gig.hue.com.gig.hue.data.Converters
+import com.gig.hue.models.database.User
+import com.gig.hue.models.database.UserInformation
 import com.gig.hue.dao.UserDao
 import com.gig.hue.dao.UserInformationDao
 import com.gig.hue.helper.constants.DatabaseConstants
-import com.gig.hue.models.*
-
 
 
 @Database(

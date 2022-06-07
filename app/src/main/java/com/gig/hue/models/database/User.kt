@@ -1,4 +1,4 @@
-package com.gig.hue.models
+package com.gig.hue.models.database
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

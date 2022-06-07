@@ -18,13 +18,12 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         lifecycleScope.launch {
-            val intent = if(viewModel.athenticationCheck())
-            {
-                Intent(this@SplashActivity, LoginActivity::class.java)
-            } else {
-                Intent(this@SplashActivity, LoginActivity::class.java)
+            viewModel.isUserLoggedIn.observe(this@SplashActivity) {
+                val intent = if (it) Intent(this@SplashActivity, LoginActivity::class.java)
+                 else Intent(this@SplashActivity, LoginActivity::class.java)
+
+                startActivity(intent)
             }
-            startActivity(intent)
         }
 
     }

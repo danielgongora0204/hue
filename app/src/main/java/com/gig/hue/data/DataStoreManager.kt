@@ -11,11 +11,9 @@ import kotlinx.coroutines.flow.map
 import java.io.IOException
 import javax.inject.Inject
 
-private val Context.dataStore by preferencesDataStore(DataStoreConstants.DATA_STORE_NAME)
+class DataStoreManager @Inject constructor(@ApplicationContext private val context: Context) {
 
-class DataStoreManager @Inject constructor(@ApplicationContext context: Context) {
-
-    private val dataStore = context.dataStore
+    private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(DataStoreConstants.DATA_STORE_NAME)
 
     private suspend fun <T> DataStore<Preferences>.getFromLocalStorage(
         PreferencesKey: Preferences.Key<T>, func: T.() -> Unit) {
@@ -33,13 +31,13 @@ class DataStoreManager @Inject constructor(@ApplicationContext context: Context)
     }
 
     suspend fun <T> storeValue(key: Preferences.Key<T>, value: T) {
-        dataStore.edit {
+        context.dataStore.edit {
             it[key] = value
         }
     }
 
     suspend fun <T> readValue(key: Preferences.Key<T>, responseFunc: T.() -> Unit) {
-        dataStore.getFromLocalStorage(key) {
+        context.dataStore.getFromLocalStorage(key) {
             responseFunc.invoke(this)
         }
     }

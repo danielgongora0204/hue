@@ -1,4 +1,4 @@
-package com.gig.hue.com.gig.hue.di
+package com.gig.hue.di
 
 import android.content.Context
 import com.gig.hue.dao.UserDao
@@ -21,7 +21,6 @@ class DatabaseModule {
 
     @Provides
     fun provideUserDao(appDatabase: HueDatabase): UserDao = appDatabase.userDao()
-
 
     @Provides
     fun provideUserInformationDao(appDatabase: HueDatabase): UserInformationDao = appDatabase.userInformationDao()

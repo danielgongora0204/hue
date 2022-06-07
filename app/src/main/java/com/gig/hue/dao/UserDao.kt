@@ -15,5 +15,5 @@ interface UserDao: BaseDao<User> {
     fun isUserLoggedIn(): Flow<Boolean>
 
     @Query("DELETE FROM user")
-    fun deleteAll()
+    suspend fun deleteAll()
 }

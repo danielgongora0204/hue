@@ -9,10 +9,10 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface UserInformationDao: BaseDao<UserInformation> {
     @Query("SELECT * FROM user_information WHERE id = :id")
-    suspend fun getById(id: Int): Flow<UserInformation?>
+    fun getById(id: Int): Flow<UserInformation?>
 
     @Query("SELECT * FROM user_information")
-    suspend fun getAll(): Flow<List<UserInformation>>
+    fun getAll(): Flow<List<UserInformation>>
 
     @Query("DELETE FROM user_information")
     suspend fun deleteAll()

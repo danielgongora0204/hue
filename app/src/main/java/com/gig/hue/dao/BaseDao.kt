@@ -9,10 +9,10 @@ interface BaseDao<T> {
     suspend fun update(vararg values: T)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert(vararg values: T): Flow<Array<Long>>
+    suspend fun insert(vararg values: T)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert(list: List<T>): Flow<Array<Long>>
+    suspend fun insert(list: List<T>)
 
     @Delete
     suspend fun delete(vararg values: T)

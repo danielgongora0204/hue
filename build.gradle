@@ -5,23 +5,24 @@ buildscript {
         //Dependencies
         lifecycleVersion = '2.4.1'
         gradleVersion = '7.2.1'
-        kotlinVersion = '1.6.21'
+        kotlinVersion = '1.7.0'
         playServiceVersion = '4.3.10'
-        hiltVersion = '2.40.1'
-        ktxVersion = '1.7.0'
+        hiltVersion = '2.42'
+        ktxVersion = '1.8.0'
         appCompatVersion = '1.4.2'
         constraintLayoutVersion = '2.1.4'
         junitExtVersion = '1.1.3'
         expressoVersion = '3.4.0'
         junitVersion = '4.13.2'
-        hiltViewModelVersion = '1.0.0-alpha03'
         roomVersion = '2.4.2'
         activityVersion = '1.6.0-alpha04'
         composeVersion = '1.2.0-alpha03'
         dataStoreVersion = '1.0.0'
         desugarVersion = '1.1.5'
         materialVersion = '1.6.1'
-        firebaseVersion = '29.0.4'
+        firebaseVersion = '30.1.0'
+        jsonSerializerVersion = '1.3.3'
+        firebaseCrashlyticsVersion = '2.8.1'
     }
 
     repositories {
@@ -34,6 +35,8 @@ buildscript {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
         classpath "com.google.gms:google-services:$playServiceVersion"
         classpath "com.google.dagger:hilt-android-gradle-plugin:$hiltVersion"
+        classpath "org.jetbrains.kotlin:kotlin-serialization:$kotlinVersion"
+        classpath "com.google.firebase:firebase-crashlytics-gradle:$firebaseCrashlyticsVersion"
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }

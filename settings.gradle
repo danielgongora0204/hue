@@ -7,4 +7,5 @@ dependencyResolutionManagement {
 }
 rootProject.name = "hue"
 include ':app'
-include ':cryptolayer'
+include ':cryptobox'
+include ':playground'

@@ -4,6 +4,8 @@ plugins {
     id 'com.google.gms.google-services'
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
+    id 'org.jetbrains.kotlin.plugin.serialization'
+    id 'com.google.firebase.crashlytics'
 }
 
 android {
@@ -11,7 +13,7 @@ android {
 
     defaultConfig {
         applicationId "com.gig.hue"
-        minSdk 23
+        minSdk 26
         targetSdk 32
         versionCode 1
         versionName "1.0"
@@ -49,6 +51,8 @@ dependencies {
 
     //region Firebase
     implementation platform("com.google.firebase:firebase-bom:$rootProject.firebaseVersion")
+    //Crashlytics
+    implementation 'com.google.firebase:firebase-crashlytics-ktx'
     //Analytics
     implementation 'com.google.firebase:firebase-analytics-ktx'
     //Authentication
@@ -80,8 +84,6 @@ dependencies {
     //region Hilt
     implementation "com.google.dagger:hilt-android:$rootProject.hiltVersion"
     kapt "com.google.dagger:hilt-compiler:$rootProject.hiltVersion"
-    implementation "androidx.hilt:hilt-lifecycle-viewmodel:$rootProject.hiltViewModelVersion"
-    kapt "androidx.hilt:hilt-compiler:$rootProject.hiltViewModelVersion"
     //endregion
 
     //region Lifecycle
@@ -101,6 +103,14 @@ dependencies {
 
     //region DataStore
     implementation "androidx.datastore:datastore-preferences:$rootProject.dataStoreVersion"
+    //endregion
+
+    //region JsonSerialization
+    implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:$rootProject.jsonSerializerVersion"
+    //endregion
+
+    //region Local  Libs
+    implementation project(':cryptobox')
     //endregion
 
 }

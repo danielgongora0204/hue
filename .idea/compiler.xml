@@ -3,6 +3,9 @@
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel target="1.7">
       <module name="hue.app" target="11" />
+      <module name="hue.cryptobox" target="1.8" />
+      <module name="hue.cryptobox.main" target="1.8" />
+      <module name="hue.cryptobox.test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -1,8 +1,9 @@
 package com.gig.hue.dao
 
-import androidx.room.*
-import kotlinx.coroutines.flow.Flow
-
+import androidx.room.Delete
+import androidx.room.Insert
+import androidx.room.OnConflictStrategy
+import androidx.room.Update
 
 interface BaseDao<T> {
     @Update(onConflict = OnConflictStrategy.REPLACE)

@@ -1,15 +1,10 @@
-package com.gig.cryptolayer
+package com.gig.cryptobox
 
-import java.lang.RuntimeException
 import java.util.*
 import javax.crypto.Cipher
 import javax.crypto.spec.IvParameterSpec
 import javax.crypto.spec.SecretKeySpec
 
-fun main() {
-    println("helloworld")
-    println("this is a playground thing")
-}
 
 object CryptoClient {
 
@@ -53,7 +48,7 @@ private object AES256 {
             System.arraycopy(ivArray, 0, result, 0, ivArray.size)
             System.arraycopy(encrypted, 0, result, ivArray.size, encrypted.size)
             Base64.getEncoder().encodeToString(result).trim()
-           // Base64.encodeToString(result, Base64.DEFAULT).trim()
+            // Base64.encodeToString(result, Base64.DEFAULT).trim()
         } catch (e: Exception) {
             ""
         }
@@ -88,5 +83,3 @@ private object AES256 {
         }
     }
 }
-
-

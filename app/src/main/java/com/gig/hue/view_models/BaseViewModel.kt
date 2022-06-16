@@ -1,10 +1,10 @@
-package com.gig.hue.utilities
+package com.gig.hue.com.gig.hue.view_models
 
 import androidx.databinding.Observable
 import androidx.databinding.PropertyChangeRegistry
 import androidx.lifecycle.ViewModel
 
-open class ObservableViewModel : ViewModel(), Observable {
+open class BaseViewModel : ViewModel(), Observable {
     private val callbacks: PropertyChangeRegistry by lazy { PropertyChangeRegistry() }
 
     override fun addOnPropertyChangedCallback(callback: Observable.OnPropertyChangedCallback) {

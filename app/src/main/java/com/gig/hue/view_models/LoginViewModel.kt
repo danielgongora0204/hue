@@ -1,65 +1,66 @@
 package com.gig.hue.view_models
 
-import android.content.Context
 import androidx.databinding.Bindable
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import com.gig.hue.utilities.ObservableViewModel
-
+import androidx.lifecycle.viewModelScope
+import com.gig.hue.com.gig.hue.data.repositories.LoginRepository
+import com.gig.hue.com.gig.hue.enums.ValidateResult
+import com.gig.hue.com.gig.hue.utilities.CrashlyticsUtil
+import com.gig.hue.com.gig.hue.utilities.extensions.validEmail
+import com.gig.hue.com.gig.hue.utilities.extensions.validPassword
+import com.gig.hue.com.gig.hue.view_models.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
-import dagger.hilt.android.qualifiers.ApplicationContext
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.launch
 import java.lang.Exception
 import javax.inject.Inject
 
 @HiltViewModel
-class LoginViewModel @Inject constructor(@ApplicationContext val context: Context): ObservableViewModel() {
+class LoginViewModel @Inject constructor(
+    loginRepository: LoginRepository): BaseViewModel() {
 
+    //Public
+    val showProgress by lazy { _showProgress.asStateFlow() }
+    val loginEnabled by lazy { _loginEnabled.asStateFlow() }
+    val navigateToMain by lazy { _navigateToMain.asStateFlow() }
+    val usernameErrorMessage by lazy { _usernameErrorMessage.asStateFlow() }
+    val passwordErrorMessage by lazy { _passwordErrorMessage.asStateFlow() }
 
-    val showProgress: LiveData<Boolean> get() = _showProgress  //by lazy { MutableLiveData(true) }
-    val loginEnabled: LiveData<Boolean> get() = _loginEnable // by lazy { MutableLiveData(true) }
-    private val _loginEnable = MutableLiveData<Boolean>(true)
-    private val _showProgress = MutableLiveData<Boolean>(true)
-   // val loginErrorMessage by lazy { MutableLiveData<String?>(null) }
-    //val passwordErrorMessage by lazy { MutableLiveData<String?>(null) }
+    //Private
+    private val _loginEnabled = MutableStateFlow(true)
+    private val _showProgress = MutableStateFlow(false)
+    private val _navigateToMain = MutableStateFlow(false)
+    private val _usernameErrorMessage = MutableStateFlow<Int?>(null)
+    private val _passwordErrorMessage = MutableStateFlow<Int?>(null)
 
+    //DatabaseUserName/Password
     @Bindable
-    val password = MutableLiveData<String>(null) //by lazy { MutableLiveData<String>(null)}
+    val password = MutableStateFlow<String?>(null)
     @Bindable
-    val username = MutableLiveData<String>(null)//by lazy { MutableLiveData<String>(null)}
+    val username = MutableStateFlow<String?>(null)
 
     fun loginClick(){
-        try{
-            // show progress
-            var number = 4
-            when(password.value) {
-                "Hello" -> {
+        viewModelScope.launch {
+            try {
+              /*  val user = username.value?: "".trim()
+                val pass = password.value?: "".trim()
+                _usernameErrorMessage.emit(user.validEmail().stringResource)
+                _passwordErrorMessage.emit(pass.validPassword().stringResource)
+                if(user.validEmail() != ValidateResult.VALID || pass.validPassword() != ValidateResult.VALID) {
+                    return@launch
                 }
-                else ->{
-                }
+                _showProgress.emit(true)
+                _loginEnabled.emit(false)*/
+                _navigateToMain.emit(true)
             }
-            if(number in 10..20){
-                return
+            catch(e: Exception) {
+                CrashlyticsUtil.recordError(e)
             }
-
-            val name = "Daniel"
-            val lastName = "Gongora"
-            val age = "26"
-            val lastWord = "THis is good"
-
-            var array = mutableListOf<String?>("Daniel", "Gongora", "Mancha", "26")
-            array.forEach { ti -> ti?.let {  } }
-            val listIterator = array.listIterator()
-            while(listIterator.hasNext()) {
-                listIterator.set("Hola"); listIterator.next()
-            }
-
-            _showProgress.value = !_showProgress.value!!
-            var t = password.value;
-            var u = username.value;
         }
-        catch(e: Exception) {
+    }
 
-        }
+    private suspend fun loginCall(user: String, pass: String) {
+
     }
 
 }

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@id/main_unassigned_search"
+        android:enabled="true"
+        android:icon="@drawable/ic_search"
+        android:title="@string/main_menu_search_tittle"/>
+    <item
+        android:id="@id/main_unassigned_inbox"
+        android:enabled="true"
+        android:icon="@drawable/ic_inbox"
+        android:title="@string/main_menu_inbox_tittle"/>
+    <item
+        android:id="@id/main_unassigned_profile"
+        android:enabled="true"
+        android:icon="@drawable/ic_profile"
+        android:title="@string/main_menu_profile_tittle"/>
+</menu>

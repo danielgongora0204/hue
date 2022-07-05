@@ -65,7 +65,8 @@
                         android:id="@id/login_user_layout_text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/element_between_margin_small"
+                        android:layout_marginTop="@dimen/element_between_margin_medium"
+                        app:displayError="@{viewModel.usernameErrorMessage}"
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintRight_toRightOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
@@ -78,6 +79,7 @@
                             android:inputType="textEmailAddress"
                             android:hint="@string/login_user_text_view_hint"
                             android:text="@={viewModel.username}"
+                            app:isEnabled="@{viewModel.loginEnabled}"
                             tools:text="test_email@gmail.com"
                             />
 
@@ -87,7 +89,8 @@
                         android:id="@id/login_password_layout_text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/element_between_margin_small"
+                        android:layout_marginTop="@dimen/element_between_margin_medium"
+                        app:displayError="@{viewModel.passwordErrorMessage}"
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintRight_toRightOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/login_user_layout_text"
@@ -101,8 +104,9 @@
                             android:hint="@string/login_password_text_view_hint"
                             android:inputType="textPassword"
                             android:text="@={viewModel.password}"
+                            app:isEnabled="@{viewModel.loginEnabled}"
                             tools:ignore="TextContrastCheck"
-                            tools:text="Branix123." />
+                            tools:text="Hello123." />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -126,6 +130,7 @@
                         android:layout_height="wrap_content"
                         android:stateListAnimator="@null"
                         android:text="@string/login_forget_password"
+                        app:isEnabled="@{viewModel.loginEnabled}"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/login_button"
                         tools:ignore="TextContrastCheck" />
@@ -147,6 +152,7 @@
                         android:layout_height="wrap_content"
                         android:stateListAnimator="@null"
                         android:text="@string/login_sign_up"
+                        app:isEnabled="@{viewModel.loginEnabled}"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/login_forget_password"

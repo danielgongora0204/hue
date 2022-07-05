@@ -8,6 +8,7 @@
     <dimen name="right_card_padding">14dp</dimen>
     <dimen name="top_card_padding">14dp</dimen>
     <dimen name="bottom_card_padding">14dp</dimen>
+    <dimen name="bottom_top_list_padding">7dp</dimen>
     <!--endregion GENERAL ELEMENT DIMENSIONS-->
 
     <!--region GENERAL ELEMENT DIMENSIONS-->
@@ -25,6 +26,8 @@
     <dimen name="button_radius_size">50dp</dimen>
     <dimen name="button_elevation">8dp</dimen>
     <dimen name="button_insets">0dp</dimen>
+    <dimen name="icon_button_padding">12dp</dimen>
+    <dimen name="icon_button_min_size">48dp</dimen>
     <!--endregion BUTTON DIMENSIONS-->
 
     <!--region LAYOUT DIMENSION-->
@@ -35,9 +38,9 @@
     <!--endregion LAYOUT DIMENSION-->
 
     <!--region CARD DIMENSIONS-->
-    <dimen name="card_elevation">6dp</dimen>
-    <dimen name="card_radius">6dp</dimen>
-    <dimen name="element_between_margin_small">14dp</dimen>
+    <dimen name="card_radius">25dp</dimen>
+    <dimen name="element_between_margin_small">8dp</dimen>
+    <dimen name="element_between_margin_medium">16dp</dimen>
     <dimen name="element_between_margin_large">25dp</dimen>
     <!--endregion CARD DIMENSIONS-->
 
@@ -59,6 +62,10 @@
     <dimen name="left_logo_content_margin">20dp</dimen>
     <dimen name="top_logo_content_margin">30dp</dimen>
     <!--endregion LOGIN DIMENSIONS-->
+
+    <!--region SEARCH FRAGMENTS-->
+    <dimen name="search_image_height">200dp</dimen>
+    <!--endregion SEARCH FRAGMENTS-->
 
 
 </resources>

@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--region GENERAL ID's-->
+    <item type="id" name="nav_graph"/>
+    <!--endregion GENERAL ID's-->
+
     <!--region LOGIN ID's-->
     <item type="id" name="login_user_layout_text"/>
     <item type="id" name="login_text_view"/>
@@ -25,5 +29,28 @@
     <item type="id" name="login_icon_logo"/>
     <item type="id" name="login_progress"/>
     <!--endregion LOGIN ID's-->
+
+    <!--region MAIN ACTIVITY -->
+    <item type="id" name="main_unassigned_search"/>
+    <item type="id" name="main_unassigned_inbox"/>
+    <item type="id" name="main_unassigned_profile"/>
+    <item type="id" name="main_unassigned_nav_host_container"/>
+    <item type="id" name="main_unassigned_bottom_navigation"/>
+    <!--endregion MAIN ACTIVITY -->
+
+    <!--region SEARCH FRAGMENT -->
+    <item type="id" name="search_item_image_view"/>
+    <item type="id" name="search_item_information_layout"/>
+    <item type="id" name="search_item_button_layout"/>
+    <item type="id" name="search_toolbar"/>
+    <item type="id" name="search_recycler"/>
+    <item type="id" name="search_menu_item"/>
+    <!--endregion SEARCH FRAGMENT -->
+
+    <!--region INBOX FRAGMENT -->
+    <!--endregion INBOX FRAGMENT -->
+
+    <!--region PROFILE FRAGMENT -->
+    <!--endregion PROFILE FRAGMENT -->
 
 </resources>

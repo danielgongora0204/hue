@@ -16,17 +16,16 @@ class SplashActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        collectViewModel()
+    }
 
+    private fun collectViewModel() {
         lifecycleScope.launch {
-            viewModel.isUserLoggedIn.observe(this@SplashActivity) {
+            viewModel.isUserLoggedIn.collect {
                 val intent = if (it) Intent(this@SplashActivity, LoginActivity::class.java)
-                 else Intent(this@SplashActivity, LoginActivity::class.java)
-
+                else Intent(this@SplashActivity, LoginActivity::class.java)
                 startActivity(intent)
             }
         }
-
     }
-
-
 }

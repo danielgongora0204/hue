@@ -1,7 +1,7 @@
-package com.gig.hue.com.gig.hue.utilities.extensions
+package com.gig.hue.utilities.extensions
 
 import android.util.Patterns
-import com.gig.hue.com.gig.hue.enums.ValidateResult
+import com.gig.hue.enums.ValidateResult
 
 fun String.validEmail(): ValidateResult = when {
         this.isEmpty() -> ValidateResult.EMPTY_STRING

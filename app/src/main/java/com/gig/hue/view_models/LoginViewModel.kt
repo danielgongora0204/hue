@@ -2,12 +2,8 @@ package com.gig.hue.view_models
 
 import androidx.databinding.Bindable
 import androidx.lifecycle.viewModelScope
-import com.gig.hue.com.gig.hue.data.repositories.LoginRepository
-import com.gig.hue.com.gig.hue.enums.ValidateResult
-import com.gig.hue.com.gig.hue.utilities.CrashlyticsUtil
-import com.gig.hue.com.gig.hue.utilities.extensions.validEmail
-import com.gig.hue.com.gig.hue.utilities.extensions.validPassword
-import com.gig.hue.com.gig.hue.view_models.BaseViewModel
+import com.gig.hue.data.repositories.LoginRepository
+import com.gig.hue.utilities.CrashlyticsUtil
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -17,7 +13,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class LoginViewModel @Inject constructor(
-    loginRepository: LoginRepository): BaseViewModel() {
+    loginRepository: LoginRepository
+): BaseViewModel() {
 
     //Public
     val showProgress by lazy { _showProgress.asStateFlow() }

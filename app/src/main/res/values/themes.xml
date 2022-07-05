@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.Hue" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.Hue" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/primaryColor</item>
         <item name="colorPrimaryVariant">@color/primaryDarkColor</item>
@@ -9,6 +9,19 @@
         <item name="colorSecondary">@color/secondaryColor</item>
         <item name="colorSecondaryVariant">@color/secondaryDarkColor</item>
         <item name="colorOnSecondary">@color/secondaryTextColor</item>
+
+        <item name="colorSurfaceVariant">@color/secondaryDarkColor</item>
+        <item name="colorOnSurfaceVariant">@color/onSecondaryContainer</item>
+
+        <item name="colorSurface">@color/secondaryLightColor</item>
+        <item name="colorOnSurface">@color/primaryColor</item>
+
+        <item name="colorSecondaryContainer">@color/secondaryContainer</item>
+        <item name="colorOnSecondaryContainer">@color/primaryColor</item>
+
+        <item name="colorPrimaryContainer">@color/secondaryContainer</item>
+        <item name="colorOnPrimaryContainer">@color/onSecondaryContainer</item>
+
         <!-- Status bar & Other views theme -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorSecondaryVariant</item>
         <item name="textInputStyle">@style/CustomTextInputLayout</item>
@@ -18,34 +31,49 @@
         <item name="android:colorBackground">?attr/colorSecondary</item>
         <item name="android:textColorPrimary">@color/generalTextColor</item>
         <item name="android:textColorSecondary">?attr/colorOnSecondary</item>
-        <item name="android:textSize">@dimen/paragraph_text_size</item>
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="CustomMaterialButton" parent="Widget.MaterialComponents.Button">
-        <item name="android:textSize">@dimen/subtittle_text_size</item>
+    <style name="CustomMaterialButton" parent="Widget.Material3.Button">
         <item name="android:insetBottom">@dimen/button_insets</item>
         <item name="android:insetTop">@dimen/button_insets</item>
-        <item name="cornerRadius">@dimen/button_radius_size</item>
+        <item name="android:textSize">@dimen/subtittle_text_size</item>
         <item name="backgroundTint">?attr/colorPrimary</item>
     </style>
 
-    <style name="CustomMaterialTextButton" parent="Widget.MaterialComponents.Button.TextButton">
+    <style name="CustomMaterialTextButton" parent="Widget.Material3.Button.TextButton">
         <item name="android:insetBottom">@dimen/button_insets</item>
         <item name="android:insetTop">@dimen/button_insets</item>
         <item name="android:textColor">@color/primaryColor</item>
         <item name="rippleColor">@color/primaryDarkColor</item>
         <item name="android:textAllCaps">false</item>
-
     </style>
 
-    <style name="CustomTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+    <style name="CustomMaterialIconButton" parent="Widget.Material3.Button.Icon">
+        <item name="iconGravity">textStart</item>
+        <item name="iconPadding">@dimen/button_insets</item>
+        <item name="android:insetTop">@dimen/button_insets</item>
+        <item name="android:insetBottom">@dimen/button_insets</item>
+        <item name="android:paddingLeft">@dimen/icon_button_padding</item>
+        <item name="android:paddingRight">@dimen/icon_button_padding</item>
+        <item name="android:minWidth">@dimen/icon_button_min_size</item>
+        <item name="android:minHeight">@dimen/icon_button_min_size</item>
+        <item name="backgroundTint">@color/primaryColor</item>
+        <item name="rippleColor">@color/primaryDarkColor</item>
+    </style>
+
+    <style name="CustomMaterialToolbar" parent="Widget.Material3.ActionBar.Solid">
+        <item name="android:textColorPrimary">@color/onSecondaryContainer</item>
+        <item name="android:textColorSecondary">@color/onSecondaryContainer</item>
+        <item name="actionMenuTextColor">@color/onSecondaryContainer</item>
+    </style>
+
+    <style name="CustomTextInputLayout" parent="Widget.Material3.TextInputLayout.OutlinedBox">
         <item name="startIconTint">@color/generalTintColor</item>
         <item name="endIconTint">@color/generalTintColor</item>
     </style>
 
-    <style name="CustomCardView" parent="Widget.MaterialComponents.CardView">
-        <item name="cardElevation">@dimen/card_elevation</item>
+    <style name="CustomCardView" parent="Widget.Material3.CardView.Elevated">
         <item name="cardCornerRadius">@dimen/card_radius</item>
     </style>
 

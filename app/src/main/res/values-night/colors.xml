@@ -5,13 +5,17 @@
     <color name="secondaryLightColor">#000000</color>
     <color name="secondaryDarkColor">#2B2B2B</color>
 
-    <color name="primaryColor">#F2545B</color>
-    <color name="primaryLightColor">#F47177</color>
-    <color name="primaryDarkColor">#823041</color>
+    <color name="primaryColor">#087E8B</color>
+    <color name="primaryLightColor">#0bafc1</color>
+    <color name="primaryDarkColor">#065760</color>
+
+    <color name="secondaryContainer">#1a545b</color>
+    <color name="onSecondaryContainer">#B4CED0</color>
+
+    <color name="surfaceColor">#0b98a8</color>
 
     <color name="secondaryTextColor">#19323C</color>
     <color name="primaryTextColor">#2B2B2B</color>
-
 
     <color name="generalTextColor">#fff</color>
     <color name="generalTintColor">#AAAAAA</color>

@@ -1,4 +1,4 @@
-package com.gig.hue.com.gig.hue.data
+package com.gig.hue.data
 
 import androidx.room.TypeConverter
 import java.time.LocalDateTime

@@ -20,8 +20,8 @@ class DataStoreManager @Inject constructor(@ApplicationContext private val conte
 
     private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(DataStoreConstants.DATA_STORE_NAME)
 
-    private inline fun <T> Flow<Preferences>.localMap(crossinline fetchValue: (value: Preferences) -> T): Flow<T> {
-        return catch {
+    private inline fun <T> Flow<Preferences>.localMap(crossinline fetchValue: (value: Preferences) -> T): Flow<T> =
+        catch {
             if (it is IOException) {
                 emit(emptyPreferences())
             } else {
@@ -30,10 +30,10 @@ class DataStoreManager @Inject constructor(@ApplicationContext private val conte
         }.map {
             fetchValue(it)
         }
-    }
 
-    private inline fun <reified T> Flow<Preferences>.secureMap(crossinline fetchValue: (value: Preferences) -> String): Flow<T> {
-        return catch {
+
+    private inline fun <reified T> Flow<Preferences>.secureMap(crossinline fetchValue: (value: Preferences) -> String): Flow<T> =
+        catch {
             if (it is IOException) {
                 emit(emptyPreferences())
             } else {
@@ -43,7 +43,7 @@ class DataStoreManager @Inject constructor(@ApplicationContext private val conte
             val decryptedValue = CryptoBoxUtil.decrypt(fetchValue(it))
             Json.decodeFromString(decryptedValue)
         }
-    }
+
 
     private suspend inline fun <reified T> DataStore<Preferences>.secureEdit(
         value: T,
@@ -55,30 +55,30 @@ class DataStoreManager @Inject constructor(@ApplicationContext private val conte
         }
     }
 
-    suspend fun <T> storeValue(key: Preferences.Key<T>, value: T) {
+    suspend fun <T> storeValue(key: Preferences.Key<T>, value: T) =
         context.dataStore.edit {
             it[key] = value
         }
-    }
 
-    fun <T> readValue(key: Preferences.Key<T>): Flow<T> {
-        return context.dataStore.data.localMap {
+
+    fun <T> readValue(key: Preferences.Key<T>): Flow<T> =
+        context.dataStore.data.localMap {
             it[key]!!
         }
-    }
+
 
     //Only Meant for String Values
-    suspend fun storeSecuredValue(key: Preferences.Key<String>, value: String) {
+    suspend fun storeSecuredValue(key: Preferences.Key<String>, value: String) =
         context.dataStore.secureEdit(value) { prefs, encryptedValue ->
             prefs[key] = encryptedValue
         }
-    }
 
-    fun readSecuredValue(key: Preferences.Key<String>): Flow<String> {
-        return context.dataStore.data.secureMap { preferences ->
+
+    fun readSecuredValue(key: Preferences.Key<String>): Flow<String> =
+        context.dataStore.data.secureMap { preferences ->
             preferences[key].orEmpty()
         }
-    }
+
 
     companion object PreferencesKeys {
         val REMEMBER_ME = booleanPreferencesKey(DataStoreConstants.DATA_STORE_LOGIN_REMEMBER_ME)

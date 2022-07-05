@@ -2,7 +2,7 @@
     <string name="app_name">hue</string>
 
     <!-- region GENERAL TEXT -->
-    <string name="ok">Ok</string>
+    <string name="ok">OK</string>
     <string name="cancel">Cancelar</string>
     <string name="accept">Aceptar</string>
     <string name="decline">Declinar</string>
@@ -12,6 +12,7 @@
     <string name="account">Cuenta</string>
     <string name="thread">Hilo</string>
     <string name="time_format">dd/MM/yyyy</string>
+    <string name="test_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </string>
     <!-- endregion GENERAL TEXT -->
 
     <!--region LOGIN TEXTS -->
@@ -27,8 +28,42 @@
     <string name="login_facebook_description">Iniciar Sesión con Facebook</string>
     <string name="login_sign_up">Regístrate ahora</string>
     <string name="login_forget_password">¿Olvido su contraseña?</string>
-
-
     <!--endregion LOGIN TEXTS-->
+
+    <!--region MAIN MENU STRINGS-->
+    <string name="main_menu_search_tittle">Busqueda</string>
+    <string name="main_menu_inbox_tittle">Mensajes</string>
+    <string name="main_menu_profile_tittle">Perfil</string>
+    <!--endregion MAIN MENU STRINGS-->
+
+    <!--region VALIDATION STRINGS-->
+    <string name="invalid_text">Texto vacio</string>
+    <string name="invalid_email">Correo invalido</string>
+    <string name="invalid_password">Contraseña invalida</string>
+    <!--endregion VALIDATION STRINGS-->
+
+    <!--region SEARCH RENT FRAGMENT-->
+    <string name="search_rent_item_description">Propiedad en Renta</string>
+    <string name="search_rent_item_example_tittle_text">Este es un Titulo</string>
+    <string name="search_rent_item_example_secondary_text">Este es un texto secundario.</string>
+    <string name="search_rent_item_example_supporting_text">Este es un texto complementario.</string>
+    <string name="search_rent_nav_label">Busqueda de lugares</string>
+    <string name="hello_search_fragment">Hola desde el fragmento de busqueda</string>
+    <string name="search_rent_toolbar_tittle">Busca tu nuevo hogar...</string>
+    <!--endregion SEARCH RENT FRAGMENT-->
+
+    <!--region INBOX FRAGMENT-->
+    <string name="inbox_nav_label">Conversación</string>
+    <string name="hello_inbox_fragment">Hola desde el fragmento de mensajeria</string>
+    <string name="inbox_toolbar_tittle">Buscar conversación...</string>
+    <!--endregion INBOX FRAGMENT-->
+
+    <!--region PROFILE FRAGMENT-->
+    <string name="profile_nav_label">Mi perfil</string>
+    <string name="hello_profile_fragment">Hola desde el fragmento de perfil</string>
+    <string name="profile_toolbar_tittle">Buscar configuración...</string>
+    <!--endregion PROFILE FRAGMENT-->
+
+
 
 </resources>

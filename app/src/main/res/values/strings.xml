@@ -2,7 +2,7 @@
     <string name="app_name">hue</string>
 
     <!-- region GENERAL TEXT -->
-    <string name="ok">Ok</string>
+    <string name="ok">OK</string>
     <string name="cancel">Cancel</string>
     <string name="accept">Accept</string>
     <string name="decline">Decline</string>
@@ -12,6 +12,8 @@
     <string name="account">Account</string>
     <string name="thread">Thread</string>
     <string name="time_format">MM/dd/yyyy</string>
+    <string name="test_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
+
     <!-- endregion GENERAL TEXT -->
 
     <!--region LOGIN TEXTS -->
@@ -29,5 +31,38 @@
     <string name="login_forget_password">Forget password?</string>
     <!--endregion LOGIN TEXTS-->
 
+    <!--region MAIN MENU STRINGS-->
+    <string name="main_menu_search_tittle">Search</string>
+    <string name="main_menu_inbox_tittle">Inbox</string>
+    <string name="main_menu_profile_tittle">Profile</string>
+    <!--endregion MAIN MENU STRINGS-->
+
+    <!--region VALIDATION STRINGS-->
+    <string name="invalid_text">Empty text</string>
+    <string name="invalid_email">Invalid email</string>
+    <string name="invalid_password">Invalid password</string>
+    <!--endregion VALIDATION STRINGS-->
+
+    <!--region SEARCH RENT FRAGMENT-->
+    <string name="search_rent_item_description">Rent Item Image</string>
+    <string name="search_rent_item_example_tittle_text">This is a Tittle</string>
+    <string name="search_rent_item_example_secondary_text">This is a secondary text.</string>
+    <string name="search_rent_item_example_supporting_text">This is a complementary text.</string>
+    <string name="search_rent_nav_label">Search for places</string>
+    <string name="hello_search_fragment">Hello from search fragment</string>
+    <string name="search_rent_toolbar_tittle">Search for your next home...</string>
+    <!--endregion SEARCH RENT FRAGMENT-->
+
+    <!--region INBOX FRAGMENT-->
+    <string name="inbox_nav_label">Messaging inbox</string>
+    <string name="hello_inbox_fragment">Hello from inbox fragment</string>
+    <string name="inbox_toolbar_tittle">Search conversation in inbox...</string>
+    <!--endregion INBOX FRAGMENT-->
+
+    <!--region PROFILE FRAGMENT-->
+    <string name="profile_nav_label">My profile</string>
+    <string name="hello_profile_fragment">Hello from profile fragment</string>
+    <string name="profile_toolbar_tittle">Search setting in profile...</string>
+    <!--endregion PROFILE FRAGMENT-->
 
 </resources>

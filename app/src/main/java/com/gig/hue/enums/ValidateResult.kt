@@ -1,4 +1,4 @@
-package com.gig.hue.com.gig.hue.enums
+package com.gig.hue.enums
 
 import com.gig.hue.R
 

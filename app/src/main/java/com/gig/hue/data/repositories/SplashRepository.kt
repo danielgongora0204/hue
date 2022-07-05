@@ -1,4 +1,4 @@
-package com.gig.hue.com.gig.hue.data.repositories
+package com.gig.hue.data.repositories
 
 import com.gig.hue.dao.UserDao
 import kotlinx.coroutines.flow.Flow

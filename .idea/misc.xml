@@ -5,20 +5,37 @@
       <map>
         <entry key="..\:/Users/Vector/Documents/GitHub/hue/app/src/main/res/drawable-night/ic_hue_alt.xml" value="0.105" />
         <entry key="..\:/Users/Vector/Documents/GitHub/hue/app/src/main/res/drawable-night/login_background.xml" value="0.105" />
+        <entry key="..\:/Users/Vector/Documents/GitHub/hue/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1975" />
         <entry key="..\:/Users/Vector/Documents/GitHub/hue/app/src/main/res/drawable/ic_apple_logo.xml" value="0.105" />
+        <entry key="..\:/Users/Vector/Documents/GitHub/hue/app/src/main/res/drawable/ic_chat.xml" value="0.22" />
+        <entry key="..\:/Users/Vector/Documents/GitHub/hue/app/src/main/res/drawable/ic_chat_icon.xml" value="0.1975" />
         <entry key="..\:/Users/Vector/Documents/GitHub/hue/app/src/main/res/drawable/ic_facebook_logo.xml" value="0.105" />
         <entry key="..\:/Users/Vector/Documents/GitHub/hue/app/src/main/res/drawable/ic_google_logo.xml" value="0.105" />
+        <entry key="..\:/Users/Vector/Documents/GitHub/hue/app/src/main/res/drawable/ic_home_search.xml" value="0.22" />
         <entry key="..\:/Users/Vector/Documents/GitHub/hue/app/src/main/res/drawable/ic_hue.xml" value="0.2" />
         <entry key="..\:/Users/Vector/Documents/GitHub/hue/app/src/main/res/drawable/ic_hue_alt.xml" value="0.344" />
         <entry key="..\:/Users/Vector/Documents/GitHub/hue/app/src/main/res/drawable/ic_hue_alt_dark.xml" value="0.105" />
+        <entry key="..\:/Users/Vector/Documents/GitHub/hue/app/src/main/res/drawable/ic_inbox.xml" value="0.135" />
         <entry key="..\:/Users/Vector/Documents/GitHub/hue/app/src/main/res/drawable/ic_launcher_background.xml" value="0.105" />
+        <entry key="..\:/Users/Vector/Documents/GitHub/hue/app/src/main/res/drawable/ic_map.xml" value="0.2" />
+        <entry key="..\:/Users/Vector/Documents/GitHub/hue/app/src/main/res/drawable/ic_people.xml" value="0.2255" />
+        <entry key="..\:/Users/Vector/Documents/GitHub/hue/app/src/main/res/drawable/ic_profile.xml" value="0.1965" />
         <entry key="..\:/Users/Vector/Documents/GitHub/hue/app/src/main/res/drawable/ic_round_email.xml" value="0.105" />
         <entry key="..\:/Users/Vector/Documents/GitHub/hue/app/src/main/res/drawable/ic_round_lock.xml" value="0.105" />
+        <entry key="..\:/Users/Vector/Documents/GitHub/hue/app/src/main/res/drawable/ic_search.xml" value="0.2135" />
+        <entry key="..\:/Users/Vector/Documents/GitHub/hue/app/src/main/res/drawable/ic_share.xml" value="0.136" />
         <entry key="..\:/Users/Vector/Documents/GitHub/hue/app/src/main/res/drawable/ic_twitter_logo.xml" value="0.105" />
         <entry key="..\:/Users/Vector/Documents/GitHub/hue/app/src/main/res/drawable/login_background.xml" value="0.344" />
         <entry key="..\:/Users/Vector/Documents/GitHub/hue/app/src/main/res/drawable/splash_background.xml" value="0.344" />
-        <entry key="..\:/Users/Vector/Documents/GitHub/hue/app/src/main/res/layout/activity_login.xml" value="0.264" />
-        <entry key="..\:/Users/Vector/Documents/GitHub/hue/app/src/main/res/layout/activity_main.xml" value="0.2444078947368421" />
+        <entry key="..\:/Users/Vector/Documents/GitHub/hue/app/src/main/res/layout/activity_login.xml" value="0.33" />
+        <entry key="..\:/Users/Vector/Documents/GitHub/hue/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Users/Vector/Documents/GitHub/hue/app/src/main/res/layout/fragment_inbox.xml" value="0.21" />
+        <entry key="..\:/Users/Vector/Documents/GitHub/hue/app/src/main/res/layout/fragment_profile.xml" value="0.15067567567567566" />
+        <entry key="..\:/Users/Vector/Documents/GitHub/hue/app/src/main/res/layout/fragment_search.xml" value="0.15067567567567566" />
+        <entry key="..\:/Users/Vector/Documents/GitHub/hue/app/src/main/res/layout/item_rent.xml" value="0.22" />
+        <entry key="..\:/Users/Vector/Documents/GitHub/hue/app/src/main/res/layout/item_search_rent.xml" value="0.25" />
+        <entry key="..\:/Users/Vector/Documents/GitHub/hue/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.1222972972972973" />
+        <entry key="..\:/Users/Vector/Documents/GitHub/hue/app/src/main/res/menu/search_menu.xml" value="0.2" />
         <entry key="..\:/Users/arezg/AndroidStudioProjects/hue/app/src/main/res/drawable/ic_apple_logo.xml" value="0.19638157894736843" />
         <entry key="..\:/Users/arezg/AndroidStudioProjects/hue/app/src/main/res/drawable/ic_facebook_f.xml" value="0.1875" />
         <entry key="..\:/Users/arezg/AndroidStudioProjects/hue/app/src/main/res/drawable/ic_facebook_logo.xml" value="0.19638157894736843" />

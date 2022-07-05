@@ -1,4 +1,4 @@
-package com.gig.hue.com.gig.hue.utilities.extensions
+package com.gig.hue.utilities.extensions
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Lifecycle

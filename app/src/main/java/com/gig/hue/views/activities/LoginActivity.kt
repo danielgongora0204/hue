@@ -5,16 +5,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
-import androidx.lifecycle.repeatOnLifecycle
 import com.gig.hue.R
 import com.gig.hue.databinding.ActivityLoginBinding
 import com.gig.hue.view_models.LoginViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.*
-import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class LoginActivity : AppCompatActivity() {
@@ -32,11 +27,11 @@ class LoginActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_login)
         binding.lifecycleOwner = this;
         binding.viewModel = viewModel;
-        viewModelObservation();
+        collectViewModel();
     }
 
-    private fun viewModelObservation() {
-        this.lifecycleScope.launchWhenStarted {
+    private fun collectViewModel() {
+        lifecycleScope.launchWhenStarted {
             viewModel.navigateToMain.collect {
                 if(it) onLoginCompleted()
             }
@@ -49,6 +44,8 @@ class LoginActivity : AppCompatActivity() {
         startActivity(intent)
         finish()
     }
+
+
 
 }
 

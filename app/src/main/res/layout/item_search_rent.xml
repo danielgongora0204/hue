@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="rentItemTemp"
+            type="com.gig.hue.models.temp.RentItemTemp" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/left_card_padding"
+        android:layout_marginEnd="@dimen/right_card_padding"
+        android:layout_marginTop="@dimen/bottom_top_list_padding"
+        android:layout_marginBottom="@dimen/bottom_top_list_padding">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@id/search_item_image_view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/search_image_height"
+                android:scaleType="fitCenter"
+                android:background="?attr/colorSurface"
+                android:contentDescription="@string/search_rent_item_description"
+                android:src="@drawable/ic_photo_library"
+                tools:src="@drawable/ic_photo_library"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@id/search_item_information_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/element_between_margin_medium"
+                android:paddingRight="@dimen/element_between_margin_medium"
+                android:paddingTop="@dimen/element_between_margin_medium"
+                app:layout_constraintTop_toBottomOf="@id/search_item_image_view"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <!-- Title, secondary and supporting text -->
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?attr/textAppearanceTitleLarge"
+                    android:text="@{rentItemTemp.title}"
+                    tools:text="@string/search_rent_item_example_tittle_text"
+                    />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/element_between_margin_small"
+                    android:text="@{rentItemTemp.secondary}"
+                    android:textAppearance="?attr/textAppearanceBodyMedium"
+                    android:textColor="?android:attr/textColorSecondary"
+                    tools:text="@string/search_rent_item_example_secondary_text"
+                    />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/element_between_margin_medium"
+                    android:text="@{rentItemTemp.paragraph}"
+                    android:textAppearance="?attr/textAppearanceBodyMedium"
+                    android:textColor="?android:attr/textColorSecondary"
+                    tools:text="@string/test_text"
+                    />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <!-- Buttons -->
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@id/search_item_button_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/element_between_margin_medium"
+                android:paddingRight="@dimen/element_between_margin_medium"
+                android:paddingTop="@dimen/element_between_margin_small"
+                android:paddingBottom="@dimen/element_between_margin_small"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@id/search_item_information_layout"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <com.google.android.material.button.MaterialButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/element_between_margin_small"
+                    app:icon="@drawable/ic_map"
+                    style="@style/CustomMaterialIconButton"
+                    />
+
+                <com.google.android.material.button.MaterialButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:icon="@drawable/ic_share"
+                    style="@style/CustomMaterialIconButton"
+                    />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>

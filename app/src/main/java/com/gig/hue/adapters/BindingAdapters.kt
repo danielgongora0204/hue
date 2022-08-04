@@ -3,7 +3,10 @@ package com.gig.hue.adapters
 import android.view.View
 import androidx.core.widget.ContentLoadingProgressBar
 import androidx.databinding.BindingAdapter
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.navigation.NavigationBarView
 import com.google.android.material.textfield.TextInputLayout
+import com.google.android.material.textview.MaterialTextView
 
 
 @BindingAdapter("showProgress")
@@ -26,3 +29,16 @@ fun bindDisplayError(textInputLayout: TextInputLayout, errorMessage: Int?) {
     }
 }
 
+@BindingAdapter("onItemSelected")
+fun bindOnItemSelected(bottomNavigationView: BottomNavigationView, listener: NavigationBarView.OnItemSelectedListener){
+    bottomNavigationView.setOnItemSelectedListener(listener)
+}
+
+@BindingAdapter("visibleWhenNotNull")
+fun bindVisibleWhenNotNull(view: View, data: Any?) {
+    data?.let {
+        view.visibility = View.VISIBLE
+    } ?: run {
+       view.visibility = View.GONE
+    }
+}

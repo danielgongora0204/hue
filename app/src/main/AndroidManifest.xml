@@ -11,6 +11,7 @@
         android:theme="@style/Theme.Hue">
         <activity
             android:name=".views.activities.MainActivity"
+            android:windowSoftInputMode="adjustPan"
             android:exported="false" />
         <activity
             android:name=".views.activities.LoginActivity"

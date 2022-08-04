@@ -17,9 +17,10 @@
 
     <!--region TEXT DIMENSION-->
     <dimen name="paragraph_text_size">14sp</dimen>
-    <dimen name="tittle_text_size">20sp</dimen>
-    <dimen name="subtittle_text_size">16sp</dimen>
+    <dimen name="title_text_size">22sp</dimen>
+    <dimen name="subtitle_text_size">16sp</dimen>
     <dimen name="textview_small_padding">3dp</dimen>
+    <dimen name="textview_medium_padding">10dp</dimen>
     <!--endregion TEXT DIMENSION-->
 
     <!--region BUTTON DIMENSIONS-->
@@ -63,9 +64,19 @@
     <dimen name="top_logo_content_margin">30dp</dimen>
     <!--endregion LOGIN DIMENSIONS-->
 
+    <!--region MAIN ACTIVITY-->
+    <dimen name="main_activity_fab_bottom_margin">120dp</dimen>
+    <!--endregion MAIN ACTIVITY-->
+
     <!--region SEARCH FRAGMENTS-->
     <dimen name="search_image_height">200dp</dimen>
+    <dimen name="search_location_animation">250dp</dimen>
     <!--endregion SEARCH FRAGMENTS-->
+
+    <!--region INBOX FRAGMENTS-->
+    <dimen name="inbox_image_size">70dp</dimen>
+
+    <!--endregion INBOX FRAGMENTS-->
 
 
 </resources>

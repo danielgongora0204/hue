@@ -21,6 +21,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="?attr/colorSurface"
             android:orientation="vertical">
 
             <androidx.appcompat.widget.AppCompatImageView
@@ -28,7 +29,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/search_image_height"
                 android:scaleType="fitCenter"
-                android:background="?attr/colorSurface"
                 android:contentDescription="@string/search_rent_item_description"
                 android:src="@drawable/ic_photo_library"
                 tools:src="@drawable/ic_photo_library"
@@ -50,29 +50,29 @@
                 app:layout_constraintStart_toStartOf="parent">
 
                 <!-- Title, secondary and supporting text -->
-                <androidx.appcompat.widget.AppCompatTextView
+                <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAppearance="?attr/textAppearanceTitleLarge"
                     android:text="@{rentItemTemp.title}"
+                    style="@style/CustomTextViewSubTitle"
                     tools:text="@string/search_rent_item_example_tittle_text"
                     />
-                <androidx.appcompat.widget.AppCompatTextView
+
+                <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/element_between_margin_small"
                     android:text="@{rentItemTemp.secondary}"
-                    android:textAppearance="?attr/textAppearanceBodyMedium"
-                    android:textColor="?android:attr/textColorSecondary"
+                    android:textAppearance="@style/CustomTextAppearanceBody"
                     tools:text="@string/search_rent_item_example_secondary_text"
                     />
-                <androidx.appcompat.widget.AppCompatTextView
+
+                <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/element_between_margin_medium"
                     android:text="@{rentItemTemp.paragraph}"
-                    android:textAppearance="?attr/textAppearanceBodyMedium"
-                    android:textColor="?android:attr/textColorSecondary"
+                    android:textAppearance="@style/CustomTextAppearanceBody"
                     tools:text="@string/test_text"
                     />
 

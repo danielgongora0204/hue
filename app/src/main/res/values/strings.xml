@@ -13,7 +13,7 @@
     <string name="thread">Thread</string>
     <string name="time_format">MM/dd/yyyy</string>
     <string name="test_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
-
+    <string name="no_results_found">No results where found for your search: </string>
     <!-- endregion GENERAL TEXT -->
 
     <!--region LOGIN TEXTS -->
@@ -50,19 +50,25 @@
     <string name="search_rent_item_example_supporting_text">This is a complementary text.</string>
     <string name="search_rent_nav_label">Search for places</string>
     <string name="hello_search_fragment">Hello from search fragment</string>
-    <string name="search_rent_toolbar_tittle">Search for your next home...</string>
+    <string name="search_rent_toolbar_tittle">Search</string>
     <!--endregion SEARCH RENT FRAGMENT-->
 
     <!--region INBOX FRAGMENT-->
     <string name="inbox_nav_label">Messaging inbox</string>
     <string name="hello_inbox_fragment">Hello from inbox fragment</string>
-    <string name="inbox_toolbar_tittle">Search conversation in inbox...</string>
+    <string name="inbox_toolbar_tittle">Inbox</string>
+    <string name="inbox_new_message">New message</string>
+    <string name="inbox_conversation_item_example_name">Jhon Smith</string>
+    <string name="inbox_conversation_item_example_location">Ensenada - Two Bedroom Apartment</string>
+    <string name="inbox_conversation_item_example_time">2:30pm</string>
+    <string name="inbox_conversation_item_example_conversation">Hi Jhon, hope you\'re doing well this is Daniel…</string>
+    <string name="inbox_conversation_item_example_unread_notification">2</string>
     <!--endregion INBOX FRAGMENT-->
 
     <!--region PROFILE FRAGMENT-->
     <string name="profile_nav_label">My profile</string>
     <string name="hello_profile_fragment">Hello from profile fragment</string>
-    <string name="profile_toolbar_tittle">Search setting in profile...</string>
+    <string name="profile_toolbar_tittle">Profile</string>
     <!--endregion PROFILE FRAGMENT-->
 
 </resources>

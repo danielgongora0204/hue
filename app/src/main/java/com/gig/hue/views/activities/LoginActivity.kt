@@ -5,17 +5,21 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import com.gig.hue.R
 import com.gig.hue.databinding.ActivityLoginBinding
 import com.gig.hue.view_models.LoginViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class LoginActivity : AppCompatActivity() {
 
     //region BINDING
-    private lateinit var binding: ActivityLoginBinding;
+    private lateinit var binding: ActivityLoginBinding
     //endregion
 
     //region VIEW MODEL
@@ -25,15 +29,25 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_login)
-        binding.lifecycleOwner = this;
-        binding.viewModel = viewModel;
-        collectViewModel();
+        binding.lifecycleOwner = this
+        binding.viewModel = viewModel
+        collectViewModel()
     }
 
     private fun collectViewModel() {
-        lifecycleScope.launchWhenStarted {
-            viewModel.navigateToMain.collect {
-                if(it) onLoginCompleted()
+        lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                launch {
+                    viewModel.navigateToMain.collect {
+                        if (it) onLoginCompleted()
+                    }
+                }
+                launch {
+                    viewModel.password.collectLatest { viewModel.setPasswordErrorMessage(it) }
+                }
+                launch {
+                    viewModel.username.collectLatest { viewModel.setUsernameErrorMessage(it) }
+                }
             }
         }
     }

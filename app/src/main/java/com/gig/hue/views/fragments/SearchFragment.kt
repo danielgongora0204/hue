@@ -5,62 +5,77 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.gig.hue.R
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.gig.hue.com.gig.hue.adapters.SearchLocationAdapter
+import com.gig.hue.com.gig.hue.view_models.SearchViewModel
 import com.gig.hue.databinding.FragmentSearchBinding
 import com.gig.hue.models.temp.RentItemTemp
+import com.gig.hue.views.activities.MainActivity
+import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.collectLatest
 
 @AndroidEntryPoint
-class SearchFragment : Fragment() {
+class SearchFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
 
     private lateinit var binding: FragmentSearchBinding
     private lateinit var adapter: SearchLocationAdapter
+    private val viewModel: SearchViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         binding = FragmentSearchBinding.inflate(inflater, container, false)
+        setupUi()
         collectUi()
         return binding.root
     }
 
-    private fun collectUi() {
-        with(binding) {
-            if(searchRecycler.adapter == null) {
-                adapter = SearchLocationAdapter().apply {
-                    data = getTempData()
-                }
-                searchRecycler.adapter = adapter
-                return
-            }
-            adapter.data = getTempData()
-            adapter.notifyDataSetChanged()
+    private fun setupUi() {
+        adapter = SearchLocationAdapter { rentItemTemp ->
+            showSnackBar(rentItemTemp as RentItemTemp)
+        }
+        with(binding){
+            searchSwipeRefresh.post { searchSwipeRefresh.isRefreshing = true }
+            searchSwipeRefresh.setOnRefreshListener(this@SearchFragment)
+            searchRecycler.adapter = adapter
         }
     }
 
-    //TODO: THIS IS A TEMP METHOD TO BE USED AS A DATA ORIGIN WHILE DEV VIEW MODEL
-    private fun getTempData(): List<RentItemTemp>
-    = listOf(
-        RentItemTemp(
-            "Hello",
-            "This is the first tittle",
-            "This is the first secondary text",
-            "This is the first paragraph"
-        ),
-        RentItemTemp(
-            "Hello",
-            "This is the second tittle",
-            "This is the second secondary text",
-            "This is the second paragraph"
-        ),
-        RentItemTemp(
-            "Hello",
-            "This is the third tittle",
-            "This is the third secondary text",
-            "This is the third paragraph"
-        )
-    )
+    private fun collectUi() {
+        lifecycleScope.launchWhenStarted {
+            repeatOnLifecycle(Lifecycle.State.STARTED){
+                viewModel.rentItems.collectLatest{
+                    it?.let {
+                        binding.searchSwipeRefresh.post { binding.searchSwipeRefresh.isRefreshing = false }
+                        adapter.data = it
+                        adapter.notifyDataSetChanged()
+                        if (it.isEmpty()) {
+                            binding.searchNotFoundLayout.notFoundLayout.visibility = View.VISIBLE
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    private fun showSnackBar(rentItemTemp: RentItemTemp) =
+        Snackbar.make(
+            (requireActivity() as MainActivity).activityBinding.mainUnassignedCoordinatorLayout,
+            "This worked: ${rentItemTemp.title}",
+            Snackbar.LENGTH_SHORT
+        ).show()
+
+
+    override fun onRefresh() {
+        viewModel.updateRentItems((1..140).random())
+    }
+
+
 }

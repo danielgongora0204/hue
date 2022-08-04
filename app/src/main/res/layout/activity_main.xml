@@ -1,48 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".views.activities.MainActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="viewModel"
+            type="com.gig.hue.view_models.MainActivityViewModel" />
+
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@id/main_unassigned_coordinator_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".views.activities.MainActivity">
+        android:layout_height="match_parent">
 
-        <com.google.android.material.appbar.MaterialToolbar
-            android:id="@id/search_toolbar"
-            android:theme="@style/CustomMaterialToolbar"
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@id/main_unassigned_appbar_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:menu="@menu/search_menu"
-            app:title="@string/search_rent_toolbar_tittle"/>
+            android:descendantFocusability="beforeDescendants"
+            android:background="@android:color/transparent"
+            android:orientation="vertical">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@id/main_unassigned_search_toolbar"
+                android:theme="@style/CustomMaterialToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_alignParentTop="true"
+                app:layout_scrollFlags="scroll|enterAlways|snap"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:menu="@menu/search_menu"
+                app:title="@{viewModel.toolbarTittle}"
+                tools:title="@string/search_rent_toolbar_tittle"/>
+
+        </com.google.android.material.appbar.AppBarLayout>
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@id/main_unassigned_nav_host_container"
             android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="match_parent"
             app:defaultNavHost="true"
             app:navGraph="@navigation/nav_graph"
-            app:layout_constraintTop_toBottomOf="@id/search_toolbar"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/main_unassigned_bottom_navigation"/>
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@id/main_unassigned_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/element_between_margin_medium"
+            android:layout_marginBottom="@dimen/main_activity_fab_bottom_margin"
+            android:layout_gravity="bottom|end"
+            android:contentDescription="@string/inbox_new_message"
+            android:visibility="@{viewModel.fabButtonVisible ?  View.VISIBLE : View.GONE}"
+            app:srcCompat="@drawable/ic_conversation"
+            style="@style/CustomFab"
+            />
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@id/main_unassigned_bottom_navigation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:labelVisibilityMode="labeled"
-            app:menu="@menu/bottom_navigation_menu">
+            android:layout_gravity="bottom"
+            app:onItemSelected="@{viewModel::onBottomMenuClicked}"
+            app:labelVisibilityMode="auto"
+            app:menu="@menu/bottom_navigation_menu"
+            app:layout_behavior="com.google.android.material.behavior.HideBottomViewOnScrollBehavior"/>
 
-        </com.google.android.material.bottomnavigation.BottomNavigationView>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 </layout>

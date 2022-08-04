@@ -46,6 +46,10 @@ android {
 }
 
 dependencies {
+    //region SwipeRefresh
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+    //endregion
+
     //region De-sugaring
     coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:$rootProject.desugarVersion")
     //endregion
@@ -88,8 +92,9 @@ dependencies {
     //endregion
 
     //region Lifecycle
-    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$rootProject.lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$rootProject.liveDataLifeCycleVersion"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$rootProject.lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$rootProject.lifecycleVersion"
     //endregion
 
     //region Room
@@ -113,6 +118,10 @@ dependencies {
 
     //region JsonSerialization
     implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:$rootProject.jsonSerializerVersion"
+    //endregion
+
+    //region Lottie
+    implementation "com.airbnb.android:lottie:$rootProject.lottieVersion"
     //endregion
 
     //region Local  Libs

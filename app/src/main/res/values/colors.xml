@@ -13,17 +13,21 @@
     <color name="onSecondaryContainer">#1a545b</color>
 
     <color name="surfaceColor">#0b98a8</color>
+    <color name="onSurfaceVariantColor">#ffffff</color>
 
     <color name="secondaryTextColor">#19323C</color>
     <color name="primaryTextColor">#f5f5f5</color>
 
     <color name="generalTextColor">#000</color>
     <color name="generalTintColor">#AAAAAA</color>
+    <color name="alternativeTextColor">#999999</color>
 
     <color name="facebook_primary">#0674DF</color>
     <color name="google_primary">#1877F2</color>
     <color name="apple_primary">#7A7A7A</color>
     <!--UNPLANNED ACCENT COLORS-->
+    <!--This color is a cheat, must only be used if no other option-->
+    <color name="whiteColor">#FFFFFF</color>
 
 
 

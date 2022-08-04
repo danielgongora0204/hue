@@ -8,10 +8,31 @@
         android:layout_height="match_parent"
         tools:context=".views.fragments.InboxFragment">
 
-        <TextView
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@id/inbox_swipe_refresh"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/hello_inbox_fragment" />
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@id/inbox_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_conversation"
+                />
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <include
+            android:id="@id/inbox_not_found_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|center"
+            android:visibility="gone"
+            layout="@layout/not_found"
+            />
 
     </FrameLayout>
+
 </layout>

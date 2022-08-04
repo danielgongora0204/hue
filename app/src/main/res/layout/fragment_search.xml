@@ -3,25 +3,36 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".views.fragments.SearchFragment">
-
-
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@id/search_recycler"
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            tools:listitem="@layout/item_search_rent"
-            />
+            android:layout_height="match_parent"
+            tools:context=".views.fragments.SearchFragment">
 
+                <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                    android:id="@id/search_swipe_refresh"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@id/search_recycler"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:clipToPadding="false"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            tools:listitem="@layout/item_search_rent"
+                            />
+
+                </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+                <include
+                    android:id="@id/search_not_found_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|center"
+                    android:visibility="gone"
+                    layout="@layout/not_found"
+                    />
+
+        </FrameLayout>
+
 </layout>

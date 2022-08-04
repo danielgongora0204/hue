@@ -2,6 +2,9 @@
 <resources>
     <!--region GENERAL ID's-->
     <item type="id" name="nav_graph"/>
+    <item type="id" name="not_found_lottie"/>
+    <item type="id" name="not_found_text"/>
+    <item type="id" name="not_found_layout"/>
     <!--endregion GENERAL ID's-->
 
     <!--region LOGIN ID's-->
@@ -31,23 +34,37 @@
     <!--endregion LOGIN ID's-->
 
     <!--region MAIN ACTIVITY -->
+    <item type="id" name="main_unassigned_fab"/>
     <item type="id" name="main_unassigned_search"/>
     <item type="id" name="main_unassigned_inbox"/>
     <item type="id" name="main_unassigned_profile"/>
     <item type="id" name="main_unassigned_nav_host_container"/>
     <item type="id" name="main_unassigned_bottom_navigation"/>
+    <item type="id" name="main_unassigned_search_toolbar"/>
+    <item type="id" name="main_unassigned_appbar_layout"/>
+    <item type="id" name="main_unassigned_coordinator_layout"/>
     <!--endregion MAIN ACTIVITY -->
 
     <!--region SEARCH FRAGMENT -->
     <item type="id" name="search_item_image_view"/>
     <item type="id" name="search_item_information_layout"/>
     <item type="id" name="search_item_button_layout"/>
-    <item type="id" name="search_toolbar"/>
     <item type="id" name="search_recycler"/>
+    <item type="id" name="search_swipe_refresh"/>
     <item type="id" name="search_menu_item"/>
+    <item type="id" name="search_not_found_layout"/>
     <!--endregion SEARCH FRAGMENT -->
 
     <!--region INBOX FRAGMENT -->
+    <item type="id" name="inbox_item_image_view"/>
+    <item type="id" name="inbox_item_name_text"/>
+    <item type="id" name="inbox_item_time_text"/>
+    <item type="id" name="inbox_item_last_message_text"/>
+    <item type="id" name="inbox_item_location_text"/>
+    <item type="id" name="inbox_item_unread_message_indicator_text"/>
+    <item type="id" name="inbox_swipe_refresh"/>
+    <item type="id" name="inbox_recycler_view"/>
+    <item type="id" name="inbox_not_found_layout"/>
     <!--endregion INBOX FRAGMENT -->
 
     <!--region PROFILE FRAGMENT -->

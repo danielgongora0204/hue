@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="conversationItemTemp"
+            type="com.gig.hue.models.temp.ConversationItemTemp" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?attr/selectableItemBackground">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@id/inbox_item_image_view"
+            android:layout_width="@dimen/inbox_image_size"
+            android:layout_height="@dimen/inbox_image_size"
+            android:layout_margin="@dimen/element_between_margin_small"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/CircleImageView"
+            app:srcCompat="@drawable/ic_profile"
+            app:tint="@color/generalTintColor"
+            tools:srcCompat="@drawable/ic_profile" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@id/inbox_item_name_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/element_between_margin_small"
+            android:text="@{conversationItemTemp.conversation}"
+            app:layout_constraintStart_toEndOf="@id/inbox_item_image_view"
+            app:layout_constraintTop_toTopOf="@id/inbox_item_image_view"
+            style="@style/CustomTextViewSubTitle"
+            tools:text="@string/inbox_conversation_item_example_name"
+            />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@id/inbox_item_time_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/element_between_margin_medium"
+            android:text="@string/inbox_conversation_item_example_time"
+            app:layout_constraintTop_toTopOf="@id/inbox_item_image_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="@string/inbox_conversation_item_example_time"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@id/inbox_item_location_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/element_between_margin_small"
+            android:layout_marginEnd="@dimen/element_between_margin_small"
+            android:textAppearance="@style/CustomTextAppearanceBody"
+            android:text="@{conversationItemTemp.relatedLocation}"
+            app:layout_constraintStart_toStartOf="@id/inbox_item_name_text"
+            app:layout_constraintTop_toBottomOf="@id/inbox_item_time_text"
+            app:layout_constraintEnd_toStartOf="@id/inbox_item_time_text"
+            app:layout_constraintBottom_toTopOf="@id/inbox_item_last_message_text"
+            tools:text="@string/inbox_conversation_item_example_location"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@id/inbox_item_last_message_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/element_between_margin_small"
+            android:layout_marginEnd="@dimen/element_between_margin_small"
+            android:layout_marginBottom="@dimen/element_between_margin_small"
+            android:textAppearance="@style/CustomTextAppearanceBody"
+            android:text="@{conversationItemTemp.lastMessage}"
+            app:layout_constraintStart_toStartOf="@id/inbox_item_location_text"
+            app:layout_constraintTop_toBottomOf="@id/inbox_item_location_text"
+            app:layout_constraintEnd_toStartOf="@id/inbox_item_time_text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:text="@string/inbox_conversation_item_example_conversation"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@id/inbox_item_unread_message_indicator_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/element_between_margin_medium"
+            android:paddingStart="@dimen/textview_medium_padding"
+            android:paddingEnd="@dimen/textview_medium_padding"
+            android:background="@drawable/chat_unread_background"
+            android:textColor="@color/whiteColor"
+            android:text="@{conversationItemTemp.pendingMessage.toString()}"
+            app:visibleWhenNotNull="@{conversationItemTemp.pendingMessage}"
+            app:layout_constraintStart_toEndOf="@id/inbox_item_last_message_text"
+            app:layout_constraintTop_toBottomOf="@id/inbox_item_time_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            style="@style/CustomTextViewSubTitle"
+            tools:text="@string/inbox_conversation_item_example_unread_notification"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <import type="android.view.View"/>
         <variable
             name="viewModel"
             type="com.gig.hue.view_models.LoginViewModel" />
@@ -81,6 +81,7 @@
                             android:text="@={viewModel.username}"
                             app:isEnabled="@{viewModel.loginEnabled}"
                             tools:text="test_email@gmail.com"
+                            style="@style/CustomTextInput"
                             />
 
                     </com.google.android.material.textfield.TextInputLayout>
@@ -106,7 +107,8 @@
                             android:text="@={viewModel.password}"
                             app:isEnabled="@{viewModel.loginEnabled}"
                             tools:ignore="TextContrastCheck"
-                            tools:text="Hello123." />
+                            tools:text="Hello123."
+                            style="@style/CustomTextInput"/>
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -140,7 +142,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/login_not_member"
-                        android:textSize="@dimen/subtittle_text_size"
+                        android:textSize="@dimen/subtitle_text_size"
                         app:layout_constraintEnd_toStartOf="@id/login_sign_up_button"
                         app:layout_constraintTop_toBottomOf="@id/login_forget_password"
                         app:layout_constraintBottom_toBottomOf="parent"/>
@@ -241,17 +243,20 @@
                 app:srcCompat="@drawable/ic_apple_logo"
                 app:tint="@color/apple_primary"/>
 
-            <androidx.core.widget.ContentLoadingProgressBar
+
+            <com.airbnb.lottie.LottieAnimationView
                 android:id="@id/login_progress"
-                style="@style/CustomContentLoadingProgress"
-                android:theme="@style/CustomContentLoadingProgress"
+                android:layout_width="@dimen/progress_bar_size"
+                android:layout_height="@dimen/progress_bar_size"
+                android:visibility="@{viewModel.loginEnabled ? View.GONE : View.VISIBLE}"
+                app:lottie_rawRes="@raw/white_loader"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
                 app:layout_constraintTop_toBottomOf="@id/login_button_google"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:showProgress="@{viewModel.showProgress}"
-                tools:visibility="visible"
-                />
+                app:layout_constraintEnd_toEndOf="parent"/>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </layout>

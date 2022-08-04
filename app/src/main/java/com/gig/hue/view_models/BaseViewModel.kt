@@ -11,7 +11,6 @@ open class BaseViewModel : ViewModel(), Observable {
 
     override fun removeOnPropertyChangedCallback(callback: Observable.OnPropertyChangedCallback) = callbacks.remove(callback)
 
-
     @Suppress("unused")
     fun notifyChange() = callbacks.notifyCallbacks(this, 0, null)
 

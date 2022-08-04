@@ -8,9 +8,7 @@ import com.gig.hue.R
 import com.gig.hue.models.temp.RentItemTemp
 import com.gig.hue.databinding.ItemSearchRentBinding
 
-class SearchLocationAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
-
-    var data = emptyList<Any>()
+class SearchLocationAdapter(var data: List<Any> = emptyList(), private val listener: (Any) -> Unit): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private enum class Type(val value: Int) {
         RENT(1);
@@ -37,19 +35,19 @@ class SearchLocationAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) =
         when(Type.getEnum(getItemViewType(position))) {
-            Type.RENT -> (holder as RentSearchLocationViewHolder).bindData(data[position] as RentItemTemp)
+            Type.RENT ->{ (holder as RentSearchLocationViewHolder).bindData(data[position] as RentItemTemp, listener)}
         }
 
-    override fun getItemCount(): Int = data.size;
+    override fun getItemCount(): Int = data.size
 
     override fun getItemViewType(position: Int): Int {
         return Type.RENT.value
     }
-}
 
-class RentSearchLocationViewHolder(private val binding: ItemSearchRentBinding): RecyclerView.ViewHolder(binding.root){
-
-    fun bindData(data: RentItemTemp) {
-        binding.rentItemTemp = data;
+    inner class RentSearchLocationViewHolder(private val binding: ItemSearchRentBinding): RecyclerView.ViewHolder(binding.root) {
+        fun bindData(data: RentItemTemp, listener: (Any) -> Unit) {
+            binding.root.setOnClickListener{ listener(data) }
+            binding.rentItemTemp = data
+        }
     }
 }

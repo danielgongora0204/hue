@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@id/not_found_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@id/not_found_lottie"
+            android:layout_width="@dimen/search_location_animation"
+            android:layout_height="@dimen/search_location_animation"
+            android:layout_gravity="center"
+            app:lottie_rawRes="@raw/not_found"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@id/not_found_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/alternativeTextColor"
+            android:text="@string/no_results_found"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/not_found_lottie"
+            style="@style/CustomTextViewSubTitle"
+            tools:text="@string/no_results_found"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

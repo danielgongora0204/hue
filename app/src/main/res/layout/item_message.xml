@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?attr/selectableItemBackground">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@id/message_item_user_image_view"
+            android:layout_width="@dimen/message_author_image_size"
+            android:layout_height="@dimen/message_author_image_size"
+            android:layout_margin="@dimen/element_between_margin_extra_small"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/message_item_inner_constraint"
+            app:shapeAppearanceOverlay="@style/CircleImageView"
+            app:tint="@color/generalTintColor"
+            tools:srcCompat="@drawable/ic_profile"
+            tools:visibility="visible" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@id/message_item_inner_constraint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/element_between_margin_extra_small"
+            android:layout_marginEnd="@dimen/element_between_margin_extra_small"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@id/message_item_user_image_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/message_item_time">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@id/message_item_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxWidth="@dimen/message_max_width"
+                android:padding="@dimen/message_padding"
+                android:background="@drawable/rounded_message"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:text="@string/message_example"
+                tools:visibility="visible"/>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@id/message_item_single_image_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:maxWidth="@dimen/message_max_width"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:shapeAppearanceOverlay="@style/RectangularRoundedImageView"
+                tools:srcCompat="@drawable/patrick_test_image"
+                tools:visibility="gone"/>
+
+            <androidx.emoji2.widget.EmojiTextView
+                android:id="@id/message_item_single_emoji"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/emoji_text_size"
+                android:layout_margin="@dimen/message_padding"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:text="@string/message_emoji_example"
+                tools:visibility="gone"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@id/message_item_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/informative_text_size"
+            android:layout_marginTop="@dimen/element_between_margin_extra_small"
+            android:layout_marginBottom="@dimen/element_between_margin_extra_small"
+            android:paddingStart="@dimen/message_padding"
+            android:paddingEnd="@dimen/message_padding"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/message_item_inner_constraint"
+            app:layout_constraintEnd_toEndOf="@id/message_item_inner_constraint"
+            tools:text="@string/inbox_conversation_item_example_time"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

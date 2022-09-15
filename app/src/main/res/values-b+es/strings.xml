@@ -71,4 +71,9 @@
     <string name="profile_toolbar_tittle">Perfil</string>
     <!--endregion PROFILE FRAGMENT-->
 
+    <!--region CONVERSATION FRAGMENT-->
+    <string name="message_example">Hola, este es un mensaje un poco mas largo de lo habitual 😶‍🌫️, 🧔🏻‍♀️, 🧑🏿‍❤️‍🧑🏾</string>
+    <string name="message_emoji_example">🧔</string>
+    <!--endregion CONVERSATION FRAGMENT-->
+
 </resources>

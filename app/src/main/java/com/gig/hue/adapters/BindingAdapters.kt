@@ -6,8 +6,6 @@ import androidx.databinding.BindingAdapter
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationBarView
 import com.google.android.material.textfield.TextInputLayout
-import com.google.android.material.textview.MaterialTextView
-
 
 @BindingAdapter("showProgress")
 fun bindShowProgress(progressBar: ContentLoadingProgressBar, showProgress: Boolean) =

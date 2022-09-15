@@ -16,8 +16,11 @@
     <!--endregion GENERAL ELEMENT DIMENSIONS-->
 
     <!--region TEXT DIMENSION-->
+    <dimen name="informative_text_size">8sp</dimen>
+    <dimen name="small_text_size">12sp</dimen>
     <dimen name="paragraph_text_size">14sp</dimen>
     <dimen name="title_text_size">22sp</dimen>
+    <dimen name="emoji_text_size">25sp</dimen>
     <dimen name="subtitle_text_size">16sp</dimen>
     <dimen name="textview_small_padding">3dp</dimen>
     <dimen name="textview_medium_padding">10dp</dimen>
@@ -40,6 +43,7 @@
 
     <!--region CARD DIMENSIONS-->
     <dimen name="card_radius">25dp</dimen>
+    <dimen name="element_between_margin_extra_small">5dp</dimen>
     <dimen name="element_between_margin_small">8dp</dimen>
     <dimen name="element_between_margin_medium">16dp</dimen>
     <dimen name="element_between_margin_large">25dp</dimen>
@@ -76,6 +80,12 @@
     <!--region INBOX FRAGMENTS-->
     <dimen name="inbox_image_size">70dp</dimen>
 
+    <!--endregion INBOX FRAGMENTS-->
+
+    <!--region CONVERSATION FRAGMENTS-->
+    <dimen name="message_author_image_size">30dp</dimen>
+    <dimen name="message_max_width">250dp</dimen>
+    <dimen name="message_padding">10dp</dimen>
     <!--endregion INBOX FRAGMENTS-->
 
 

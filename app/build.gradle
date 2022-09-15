@@ -124,6 +124,13 @@ dependencies {
     implementation "com.airbnb.android:lottie:$rootProject.lottieVersion"
     //endregion
 
+    //region Emojis
+    implementation "androidx.emoji2:emoji2:$rootProject.emojiVersion"
+    implementation "androidx.emoji2:emoji2-views:$rootProject.emojiVersion"
+    implementation "androidx.emoji2:emoji2-views-helper:$rootProject.emojiVersion"
+
+    //endregion
+
     //region Local  Libs
     implementation project(':cryptobox')
     //endregion

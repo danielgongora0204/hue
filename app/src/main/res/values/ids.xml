@@ -70,4 +70,13 @@
     <!--region PROFILE FRAGMENT -->
     <!--endregion PROFILE FRAGMENT -->
 
+    <!--region CONVERSATION FRAGMENT-->
+    <item type="id" name="message_item_user_image_view"/>
+    <item type="id" name="message_item_text"/>
+    <item type="id" name="message_item_time"/>
+    <item type="id" name="message_item_inner_constraint"/>
+    <item type="id" name="message_item_single_image_view"/>
+    <item type="id" name="message_item_single_emoji"/>
+    <!--endregion CONVERSATION FRAGMENT-->
+
 </resources>

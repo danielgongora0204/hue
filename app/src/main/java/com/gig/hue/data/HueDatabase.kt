@@ -6,7 +6,6 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
-import com.gig.hue.data.Converters
 import com.gig.hue.models.database.User
 import com.gig.hue.models.database.UserInformation
 import com.gig.hue.dao.UserDao

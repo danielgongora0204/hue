@@ -5,8 +5,8 @@ buildscript {
         //Dependencies
         lifecycleVersion = '2.5.1'
         liveDataLifeCycleVersion = '2.5.1'
-        gradleVersion = '7.2.2'
-        kotlinVersion = '1.7.10'
+        gradleVersion = '7.3.1'
+        kotlinVersion = '1.7.20'
         playServiceVersion = '4.3.10'
         hiltVersion = '2.42'
         ktxVersion = '1.9.0'
@@ -16,7 +16,7 @@ buildscript {
         expressoVersion = '3.4.0'
         junitVersion = '4.13.2'
         roomVersion = '2.4.3'
-        activityVersion = '1.6.0-rc02'
+        activityVersion = '1.7.0-alpha01'
         composeVersion = '1.2.0-alpha03'
         dataStoreVersion = '1.0.0'
         desugarVersion = '1.1.5'
@@ -27,6 +27,7 @@ buildscript {
         navigationComponentVersion = '2.5.2'
         lottieVersion = '3.5.0'
         emojiVersion = '1.2.0'
+        swiperefreshlayout = '1.1.0'
     }
 
     repositories {

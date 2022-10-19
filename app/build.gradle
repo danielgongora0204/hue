@@ -10,12 +10,12 @@ plugins {
 }
 
 android {
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.gig.hue"
         minSdk 26
-        targetSdk 32
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
@@ -47,7 +47,7 @@ android {
 
 dependencies {
     //region SwipeRefresh
-    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:$rootProject.swiperefreshlayout"
     //endregion
 
     //region De-sugaring

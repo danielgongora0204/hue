@@ -8,7 +8,7 @@ import com.gig.hue.R
 import com.gig.hue.models.temp.RentItemTemp
 import com.gig.hue.databinding.ItemSearchRentBinding
 
-class SearchLocationAdapter(var data: List<Any> = emptyList(), private val listener: (Any) -> Unit): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class LocationAdapter(var data: List<Any> = emptyList(), private val listener: (Any) -> Unit): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private enum class Type(val value: Int) {
         RENT(1);

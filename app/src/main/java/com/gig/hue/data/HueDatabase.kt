@@ -31,6 +31,7 @@ abstract class HueDatabase : RoomDatabase()  {
         fun getDatabase(context: Context): HueDatabase {
             return instance ?: synchronized(this) {
                 instance ?: Room.databaseBuilder(context, HueDatabase::class.java, DatabaseConstants.DATABASE_NAME)
+                    .fallbackToDestructiveMigration()
                     .build().also { instance = it }
             }
         }

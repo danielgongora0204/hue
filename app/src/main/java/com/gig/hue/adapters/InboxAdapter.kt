@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.gig.hue.R
 import com.gig.hue.databinding.ItemConversationBinding
 import com.gig.hue.models.temp.ConversationItemTemp
+import com.squareup.picasso.Picasso
 
 
 class InboxAdapter(var data: List<Any> = emptyList(), private val listener: (Any) -> Unit): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -49,6 +50,12 @@ class InboxAdapter(var data: List<Any> = emptyList(), private val listener: (Any
         fun bindData(data: ConversationItemTemp, listener: (Any) -> Unit) {
             binding.root.setOnClickListener { listener(data) }
             binding.conversationItemTemp = data
+            Picasso.get()
+                .load("https://i.imgur.com/tGbaZCY.jpg")
+                .placeholder(R.drawable.ic_profile)
+                .error(R.drawable.ic_profile)
+                .fit()
+                .into(binding.inboxItemImageView);
         }
     }
 }

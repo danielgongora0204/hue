@@ -1,7 +1,7 @@
 package com.gig.hue.com.gig.hue.view_models
 
 import androidx.lifecycle.viewModelScope
-import com.gig.hue.com.gig.hue.data.repositories.SearchRepository
+import com.gig.hue.com.gig.hue.data.repositories.LocationRepository
 import com.gig.hue.models.temp.RentItemTemp
 import com.gig.hue.view_models.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -10,7 +10,7 @@ import kotlinx.coroutines.flow.*
 import javax.inject.Inject
 
 @HiltViewModel
-class SearchViewModel @Inject constructor(private val repository: SearchRepository): BaseViewModel() {
+class LocationViewModel @Inject constructor(private val repository: LocationRepository): BaseViewModel() {
 
     val rentItems by lazy { _rentItems.asStateFlow() }
 

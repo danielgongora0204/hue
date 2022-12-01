@@ -1,7 +1,6 @@
 package com.gig.hue.utilities.extensions
 
 import android.util.Patterns
-import com.gig.hue.com.gig.hue.utilities.extensions.default
 import com.gig.hue.enums.ValidateResult
 
 /*

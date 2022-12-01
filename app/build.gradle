@@ -131,6 +131,10 @@ dependencies {
 
     //endregion
 
+    //region Picasso
+    implementation "com.squareup.picasso:picasso:$rootProject.picassoVersion"
+    //endregion
+
     //region Local  Libs
     implementation project(':cryptobox')
     //endregion

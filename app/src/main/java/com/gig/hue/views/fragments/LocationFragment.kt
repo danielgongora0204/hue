@@ -10,8 +10,8 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-import com.gig.hue.com.gig.hue.adapters.SearchLocationAdapter
-import com.gig.hue.com.gig.hue.view_models.SearchViewModel
+import com.gig.hue.com.gig.hue.adapters.LocationAdapter
+import com.gig.hue.com.gig.hue.view_models.LocationViewModel
 import com.gig.hue.databinding.FragmentSearchBinding
 import com.gig.hue.models.temp.RentItemTemp
 import com.gig.hue.views.activities.MainActivity
@@ -20,11 +20,11 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 
 @AndroidEntryPoint
-class SearchFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
+class LocationFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
 
     private lateinit var binding: FragmentSearchBinding
-    private lateinit var adapter: SearchLocationAdapter
-    private val viewModel: SearchViewModel by viewModels()
+    private lateinit var adapter: LocationAdapter
+    private val viewModel: LocationViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -38,12 +38,14 @@ class SearchFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
     }
 
     private fun setupUi() {
-        adapter = SearchLocationAdapter { rentItemTemp ->
+        adapter = LocationAdapter { rentItemTemp ->
             showSnackBar(rentItemTemp as RentItemTemp)
         }
         with(binding){
-            searchSwipeRefresh.post { searchSwipeRefresh.isRefreshing = true }
-            searchSwipeRefresh.setOnRefreshListener(this@SearchFragment)
+            searchSwipeRefresh.apply {
+                post { searchSwipeRefresh.isRefreshing = true }
+                setOnRefreshListener(this@LocationFragment)
+            }
             searchRecycler.adapter = adapter
         }
     }

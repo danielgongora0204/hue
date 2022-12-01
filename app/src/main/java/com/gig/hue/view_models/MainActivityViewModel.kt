@@ -20,9 +20,9 @@ class MainActivityViewModel @Inject constructor(): BaseViewModel() {
     val fabButtonVisible by lazy { _fabButtonVisible.asStateFlow() }
 
     //PrivateFlow
-    private val _toolbarTittle = MutableStateFlow<Int>(R.string.search_rent_toolbar_tittle)
+    private val _toolbarTittle = MutableStateFlow(R.string.search_rent_toolbar_tittle)
     private val _currentFragment = MutableStateFlow<MenuItem?>(null)
-    private val _fabButtonVisible = MutableStateFlow<Boolean>(false)
+    private val _fabButtonVisible = MutableStateFlow(false)
 
     fun onBottomMenuClicked(@NonNull item: MenuItem): Boolean =
         when(item.itemId) {

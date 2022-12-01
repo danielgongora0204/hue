@@ -6,7 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.gig.hue.com.gig.hue.adapters.InboxAdapter
 import com.gig.hue.com.gig.hue.view_models.InboxViewModel
@@ -15,6 +17,7 @@ import com.gig.hue.models.temp.ConversationItemTemp
 import com.gig.hue.views.activities.MainActivity
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.collectLatest
 
 @AndroidEntryPoint
 class InboxFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
@@ -47,13 +50,15 @@ class InboxFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
 
     private fun collectUi() {
         lifecycleScope.launchWhenStarted {
-            viewModel.conversationItems.collect{
-                it?.let{
-                    binding.inboxSwipeRefresh.isRefreshing = false
-                    adapter.data = it
-                    adapter.notifyDataSetChanged()
-                    if (it.isEmpty()) {
-                        binding.inboxNotFoundLayout.notFoundLayout.visibility = View.VISIBLE
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                viewModel.conversationItems.collectLatest{
+                    it?.let{
+                        binding.inboxSwipeRefresh.isRefreshing = false
+                        adapter.data = it
+                        adapter.notifyDataSetChanged()
+                        if (it.isEmpty()) {
+                            binding.inboxNotFoundLayout.notFoundLayout.visibility = View.VISIBLE
+                        }
                     }
                 }
             }
@@ -69,7 +74,7 @@ class InboxFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
 
 
     override fun onRefresh() {
-        viewModel.updateConversations()
+        viewModel.updateConversations((1..140).random())
     }
 
 }

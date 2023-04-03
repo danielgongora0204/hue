@@ -46,7 +46,7 @@ class LocationFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
                 post { searchSwipeRefresh.isRefreshing = true }
                 setOnRefreshListener(this@LocationFragment)
             }
-            searchRecycler.adapter = adapter
+            searchRecycler.adapter = adapterf
         }
     }
 

@@ -10,12 +10,12 @@ plugins {
 }
 
 android {
-    compileSdk 33
+    compileSdkVersion "android-UpsideDownCake"
 
     defaultConfig {
         applicationId "com.gig.hue"
         minSdk 26
-        targetSdk 33
+        targetSdkVersion "android-UpsideDownCake"
         versionCode 1
         versionName "1.0"
 
@@ -48,6 +48,9 @@ android {
 dependencies {
     //region SwipeRefresh
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:$rootProject.swiperefreshlayout"
+    implementation "junit:junit:$rootProject.junitVersion"
+    implementation "org.junit.jupiter:junit-jupiter:$rootProject.jupiterVersion"
+    androidTestImplementation "org.junit.jupiter:junit-jupiter:$rootProject.jupiterVersion"
     //endregion
 
     //region De-sugaring

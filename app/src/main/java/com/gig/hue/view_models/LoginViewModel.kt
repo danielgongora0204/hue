@@ -44,10 +44,16 @@ class LoginViewModel @Inject constructor(
         }
     }
 
-    fun setUsernameErrorMessage(user: String?) { _usernameErrorMessage.value = user.checkUsername().getCheckResult(ValidateResult.INVALID_USERNAME).stringResource }
+    fun setUsernameErrorMessage(user: String?) {
+        _usernameErrorMessage.value =
+            user.checkUsername().getCheckResult(ValidateResult.INVALID_USERNAME).stringResource
+    }
 
 
-    fun setPasswordErrorMessage(password: String?) { _passwordErrorMessage.value = password.checkPassword().getCheckResult(ValidateResult.INVALID_PASSWORD).stringResource }
+    fun setPasswordErrorMessage(password: String?) {
+        _passwordErrorMessage.value =
+            password.checkPassword().getCheckResult(ValidateResult.INVALID_PASSWORD).stringResource
+    }
 
     fun loginClick(){
         viewModelScope.launch {
@@ -70,11 +76,8 @@ class LoginViewModel @Inject constructor(
         }
     }
 
-    private fun internalCredentialValidation() = username.value.checkUsername() != null || password.value.checkPassword() != null
-
-    private suspend fun loginCall(user: String, pass: String) {
-    }
-
+    private fun internalCredentialValidation() =
+        username.value.checkUsername() != null || password.value.checkPassword() != null
 
 
 }

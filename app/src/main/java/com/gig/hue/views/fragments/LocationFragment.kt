@@ -17,7 +17,9 @@ import com.gig.hue.models.temp.RentItemTemp
 import com.gig.hue.views.activities.MainActivity
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class LocationFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
@@ -46,12 +48,12 @@ class LocationFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
                 post { searchSwipeRefresh.isRefreshing = true }
                 setOnRefreshListener(this@LocationFragment)
             }
-            searchRecycler.adapter = adapterf
+            searchRecycler.adapter = adapter
         }
     }
 
     private fun collectUi() {
-        lifecycleScope.launchWhenStarted {
+        lifecycleScope.launch(Dispatchers.Main) {
             repeatOnLifecycle(Lifecycle.State.STARTED){
                 viewModel.rentItems.collectLatest{
                     it?.let {

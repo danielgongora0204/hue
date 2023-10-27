@@ -35,11 +35,6 @@ abstract class HueDatabase : RoomDatabase()  {
                     .build().also { instance = it }
             }
         }
-
-        //private fun buildDatabase(context: Context): HueDatabase {
-        //    return Room.databaseBuilder(context, HueDatabase::class.java, DatabaseConstants.DATABASE_NAME)
-        //       .build()
-        //}
     }
 
 

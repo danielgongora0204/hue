@@ -10,16 +10,20 @@ plugins {
 }
 
 android {
-    compileSdkVersion "android-UpsideDownCake"
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.gig.hue"
-        minSdk 26
-        targetSdkVersion "android-UpsideDownCake"
+        minSdk 30
+        targetSdk 34
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    packagingOptions {
+        exclude 'META-INF/*'
     }
 
     buildTypes {
@@ -36,11 +40,16 @@ android {
         coreLibraryDesugaringEnabled true
 
         //Sets Java compatibility to 8
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = '17'
+    }
+    testOptions {
+        unitTests.all {
+            useJUnitPlatform()
+        }
     }
     namespace 'com.gig.hue'
 }
@@ -48,9 +57,6 @@ android {
 dependencies {
     //region SwipeRefresh
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:$rootProject.swiperefreshlayout"
-    implementation "junit:junit:$rootProject.junitVersion"
-    implementation "org.junit.jupiter:junit-jupiter:$rootProject.jupiterVersion"
-    androidTestImplementation "org.junit.jupiter:junit-jupiter:$rootProject.jupiterVersion"
     //endregion
 
     //region De-sugaring
@@ -80,9 +86,23 @@ dependencies {
     //endregion
 
     //region Testing
+    implementation "junit:junit:$rootProject.junitVersion"
+    implementation "org.junit.jupiter:junit-jupiter:$rootProject.jupiterVersion"
+
+
+    testImplementation "org.junit.jupiter:junit-jupiter:$rootProject.jupiterVersion"
+    testImplementation "org.junit.jupiter:junit-jupiter-params:$rootProject.jupiterVersion"
+//    testImplementation "io.mockk:mockk:$rootProject.mockkVersion"
+//    testImplementation "org.hamcrest:hamcrest:$rootProject.hamcrestVersion"
+//    testImplementation "org.hamcrest:hamcrest-library:$rootProject.hamcrestVersion"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.1"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1"
+    androidTestImplementation "org.junit.jupiter:junit-jupiter:$rootProject.jupiterVersion"
+//    androidTestImplementation "io.mockk:mockk-android:$rootProject.mockkVersion"
     androidTestImplementation "androidx.test.ext:junit:$rootProject.junitExtVersion"
     androidTestImplementation "androidx.test.espresso:espresso-core:$rootProject.expressoVersion"
-    testImplementation "junit:junit:$rootProject.junitVersion"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$rootProject.jupiterVersion"
+    testRuntimeOnly "org.junit.vintage:junit-vintage-engine:$rootProject.jupiterVersion"
     //endregion
 
     //region MaterialDesign

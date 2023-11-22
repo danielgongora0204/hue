@@ -2,8 +2,8 @@ package com.gig.hue.view_models
 
 import androidx.databinding.Bindable
 import androidx.lifecycle.viewModelScope
+import com.gig.hue.com.gig.hue.utilities.CredentialValidationUtil
 import com.gig.hue.data.repositories.LoginRepository
-import com.gig.hue.enums.ValidateResult
 import com.gig.hue.utilities.CrashlyticsUtil
 import com.gig.hue.utilities.extensions.*
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -45,20 +45,17 @@ class LoginViewModel @Inject constructor(
     }
 
     fun setUsernameErrorMessage(user: String?) {
-        _usernameErrorMessage.value =
-            user.checkUsername().getCheckResult(ValidateResult.INVALID_USERNAME).stringResource
+        _usernameErrorMessage.value = CredentialValidationUtil.checkUsername(user)?.stringResource
     }
 
-
     fun setPasswordErrorMessage(password: String?) {
-        _passwordErrorMessage.value =
-            password.checkPassword().getCheckResult(ValidateResult.INVALID_PASSWORD).stringResource
+        _passwordErrorMessage.value = CredentialValidationUtil.checkPassword(password)?.stringResource
     }
 
     fun loginClick(){
         viewModelScope.launch {
             try {
-                if(internalCredentialValidation()) {
+                if(internalCredentialValidation(username.value, password.value)) {
                     return@launch
                 }
                 _loginEnabled.value = false
@@ -76,8 +73,10 @@ class LoginViewModel @Inject constructor(
         }
     }
 
-    private fun internalCredentialValidation() =
-        username.value.checkUsername() != null || password.value.checkPassword() != null
-
+    private fun internalCredentialValidation(
+        username: String?,
+        password: String?
+    ) = CredentialValidationUtil.checkUsername(username) != null ||
+            CredentialValidationUtil.checkPassword(password) != null
 
 }

@@ -15,7 +15,9 @@ buildscript {
         junitExtVersion = '1.1.5'
         expressoVersion = '3.5.1'
         junitVersion = '4.13.2'
-        jupiterVersion = '5.9.2'
+        jupiterVersion = '5.10.0'
+        mannodermausJUnit = '1.9.2.0'
+        mannodermausJUnitInstrumentation = '1.4.0'
         roomVersion = '2.6.0'
         activityVersion = '1.8.0'
         dataStoreVersion = '1.0.0'
@@ -31,6 +33,8 @@ buildscript {
         picassoVersion = '2.8'
         mockkVersion = '1.12.0'
         hamcrestVersion = '2.2'
+        truthVersion = '1.1.5'
+        coroutinesTestVersion = '1.7.1'
     }
 
     repositories {
@@ -46,6 +50,7 @@ buildscript {
         classpath "org.jetbrains.kotlin:kotlin-serialization:$kotlinVersion"
         classpath "com.google.firebase:firebase-crashlytics-gradle:$firebaseCrashlyticsVersion"
         classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navigationComponentVersion"
+        classpath "de.mannodermaus.gradle.plugins:android-junit5:$mannodermausJUnit"
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
